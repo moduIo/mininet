@@ -36,13 +36,13 @@ class QuaggaTopo(Topo):
         # List of Quagga host configs
         quaggaHosts = []
         quaggaHosts.append(QuaggaHost(name='r1', ip='172.0.1.2/24',
-                                      loIP='10.0.1.1/24', type='switch'))
+                                      loIP='10.0.1.1/24', type='host'))
         quaggaHosts.append(QuaggaHost(name='r2', ip='172.0.2.2/24',
-                                      loIP='10.0.2.1/24', type='switch'))
+                                      loIP='10.0.2.1/24', type='host'))
         quaggaHosts.append(QuaggaHost(name='r3', ip='172.0.3.2/24',
-                                      loIP='10.0.3.1/24', type='switch'))
+                                      loIP='10.0.3.1/24', type='host'))
         quaggaHosts.append(QuaggaHost(name='r4', ip='172.0.4.2/24',
-                                      loIP='10.0.4.1/24', type='switch'))
+                                      loIP='10.0.4.1/24', type='host'))
         
         quaggaHosts.append(QuaggaHost(name='h1', ip='172.0.1.1/24',
                                       loIP='10.0.1.1/24', type='host'))
@@ -58,7 +58,7 @@ class QuaggaTopo(Topo):
         for host in quaggaHosts:
 
             # Create an instance of a host, called a quaggaContainer
-	    if host.type != 'xhost':
+	    if host.type == 'host':
                 quaggaContainer = self.addHost(name=host.name,
                                                ip=host.ip,
                                                hostname=host.name,
@@ -98,3 +98,11 @@ class QuaggaTopo(Topo):
 	self.addLink(containers[1], containers[3])
 	self.addLink(containers[2], containers[3])
 	self.addLink(containers[3], containers[5])
+
+	# Add routers to switch fabric
+	#self.addLink(containers[0], ixpfabric)
+	#self.addLink(containers[1], ixpfabric)
+	#self.addLink(containers[2], ixpfabric)
+	#self.addLink(containers[3], ixpfabric)
+	#self.addLink(containers[4], ixpfabric)
+	#self.addLink(containers[5], ixpfabric)
