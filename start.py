@@ -25,7 +25,6 @@ from topo import QuaggaTopo
 
 net = None
 
-
 def startNetwork():
     "instantiates a topo, then starts the network and prints debug information"
 
@@ -38,7 +37,7 @@ def startNetwork():
     net.start()
 
     # Manually add interface IP addresses
-    print '** Adding interface IP addresses\n-------------------------------'
+    print '** Adding interface IP addresses\n'
     r1 = net.getNodeByName('r1')
     r1.setIP('172.0.2.1/24', 24, 'r1-eth1')
     r1.setIP('172.0.3.1/24', 24, 'r1-eth2')
@@ -64,19 +63,18 @@ def startNetwork():
     h1.cmd('sysctl net.ipv4.ip_forward=1')
     h2.cmd('sysctl net.ipv4.ip_forward=1')
 
-    #info('** Dumping host connections\n')
-    #dumpNodeConnections(net.hosts)
+    # Start servers
+    info('** Starting servers on port 800\n')
+    r1.cmd('python rip_lite_server.py &')
+    r2.cmd('python rip_lite_server.py &')
+    r3.cmd('python rip_lite_server.py &')
+    r4.cmd('python rip_lite_server.py &')
+    h1.cmd('python rip_lite_server.py &')
+    h2.cmd('python rip_lite_server.py &')
 
-    #info('** Testing network connectivity\n')
-    #net.ping(net.hosts)
-
-    #info('** Dumping host processes\n')
-    #for host in net.hosts:
-    #    host.cmdPrint("ps aux")
-
+    # Start CLI
     info('** Running CLI\n')
     CLI(net)
-
 
 def stopNetwork():
     "stops a network (only called on a forced cleanup)"
