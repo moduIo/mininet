@@ -25,5 +25,5 @@ for neighbor in neighbors:
     for route in routes:
         message += route + ';'
 
-    s.send(message[:-1])
+    s.send(message[:-1])  # Removes the last ; from message
     s.close

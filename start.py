@@ -68,7 +68,7 @@ def startNetwork():
     r1.cmd('python rip_lite_server.py "h1,r2,r3" "172.0.1.1,172.0.2.2,172.0.3.2" &')
     r2.cmd('python rip_lite_server.py "r1,r4" "172.0.2.1,172.0.4.2" &')
     r3.cmd('python rip_lite_server.py "r1,r4" "172.0.3.1,172.0.5.2" &')
-    r4.cmd('python rip_lite_server.py "r2,r3,h2" "172.0.4.1,172.0.5.1, 72.0.6.2" &')
+    r4.cmd('python rip_lite_server.py "r2,r3,h2" "172.0.4.1,172.0.5.1,172.0.6.2" &')
     h1.cmd('python rip_lite_server.py "r1" "172.0.1.2" &')
     h2.cmd('python rip_lite_server.py "r4" "172.0.6.1" &')
 

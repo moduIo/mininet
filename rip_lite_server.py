@@ -54,9 +54,9 @@ def compute_tables(tables, routes, neighbors):
 
     # Fill in new DV
     for dest in dests.keys():
-        updatedRoutes[dest] = dests[dest]
+        updatedRoutes[dest] = dest + ',' + dests[dest]
 
-    return 'TABLES: ' + str(tables) + '\nROUTES' + str(routes) + '\nUPDATED ROUTES: ' + str(updatedRoutes) + '\n'
+    return updatedRoutes
 
 #
 # Main()
@@ -78,10 +78,9 @@ serverSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 serverSocket.bind(('', 800))
 host = socket.gethostname()
 
-# Enforce fresh routing_table.txt
+# Populate routing_table.txt
 table_path = 'routing_tables/' + host + '/routing_table.txt'
-open(table_path, 'w').close()
-table = open(table_path, 'w')
+table = open(table_path, 'w+')
 
 # Parse weights.txt file to get initial routing tables
 with open('weights.txt', 'r') as f:
@@ -143,9 +142,15 @@ while True:
             done.close()
 
 	# Compute new tables
-	foo = open('foo.txt', 'a+')
-	foo.write(host + ' : ' + str(compute_tables(tables, routes, neighbors)) + '\n')
-	foo.close()
+        computed = compute_tables(tables, routes, neighbors)
+
+        # Write new table to file
+        table = open(table_path, 'w')
+
+        for entry in computed:
+            table.write(computed[entry] + '\n')
+            
+        table.close()
 
 	# Write completion time to log.txt
 	log = open('log.txt', 'a+')
@@ -153,5 +158,17 @@ while True:
 	log.close()
 	
         iteration += 1 # Track iteration for synchronization
-    
+
+	# Create command for system
+        command = 'python rip_lite_client.py'
+        ips = ''
+
+        for ip in neighbor_ips:
+	    ips += ip + ', '
+	    
+        command += ' \"' + ips[:-2] + '\"'
+	
+        # Run client code to send new tables
+        os.system(command)
+
     clientSocket.close()
