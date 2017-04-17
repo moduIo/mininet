@@ -19,7 +19,7 @@ from datetime import datetime
 #
 def compute_tables(tables, routes, neighbors):
     dests = {}          # (key, value) pairs (dest, {next, cost})
-    updatedRoutes = {}  # Holds updated routing table
+    updatedRoutes = []  # Holds updated routing table
     costs = {}          # Holds current cost to node
     host = socket.gethostname()
 
@@ -30,8 +30,11 @@ def compute_tables(tables, routes, neighbors):
     # Split routes into dictionary keyed by dest
     for route in routes:
         data = route.split(',')
-	dests[data[0]] = data[1] + ',' + data[2]
-        costs[data[0]] = int(data[2])
+
+        # If data is not null
+        if data: 
+	    dests[data[0]] = data[1] + ',' + data[2]
+            costs[data[0]] = int(data[2])
 
     # For all neighbor distance vectors
     for neighbor in neighbors:
@@ -53,8 +56,8 @@ def compute_tables(tables, routes, neighbors):
                 costs[field[0]] = cost
 
     # Fill in new DV
-    for dest in dests.keys():
-        updatedRoutes[dest] = dest + ',' + dests[dest]
+    for dest in sorted(dests.keys()):
+        updatedRoutes.append(dest + ',' + dests[dest])
 
     return updatedRoutes
 
@@ -116,7 +119,8 @@ serverSocket.listen(5)
 while True:
     (clientSocket, address) = serverSocket.accept()
     message = clientSocket.recv(1024)    
-    
+    clientSocket.close()
+
     # Check which neighbor sent the message
     for neighbor in neighbors:
         if neighbor in message:
@@ -142,33 +146,40 @@ while True:
             done.close()
 
 	# Compute new tables
-        computed = compute_tables(tables, routes, neighbors)
+        newRoutes = compute_tables(tables, routes, neighbors)
 
-        # Write new table to file
-        table = open(table_path, 'w')
+	# Only pass DV on update
+        if routes == newRoutes:
+	    routes = newRoutes
 
-        for entry in computed:
-            table.write(computed[entry] + '\n')
+            # Write new table to file
+            table = open(table_path, 'w')
+
+            for route in routes:
+                table.write(route + '\n')
             
-        table.close()
+            table.close()
 
-	# Write completion time to log.txt
-	log = open('log.txt', 'a+')
-	log.write(host + ' completed iteration ' + str(iteration) + ' at ' + str(datetime.now()) + '\n')
-	log.close()
+	    # Write completion time to log.txt
+	    log = open('log.txt', 'a+')
+	    log.write(host + ' completed iteration ' + str(iteration) + ' at ' + str(datetime.now()) + '\n')
+	    log.close()
 	
-        iteration += 1 # Track iteration for synchronization
+            iteration += 1 # Track iteration for synchronization
 
-	# Create command for system
-        command = 'python rip_lite_client.py'
-        ips = ''
+	    # Create command for system
+            command = 'python rip_lite_client.py'
+            ips = ''
 
-        for ip in neighbor_ips:
-	    ips += ip + ', '
+            for ip in neighbor_ips:
+	        ips += ip + ','
 	    
-        command += ' \"' + ips[:-2] + '\"'
+            command += ' \"' + ips[:-1] + '\"'
 	
-        # Run client code to send new tables
-        os.system(command)
-
-    clientSocket.close()
+            # Run client code to send new tables
+            os.system(command)
+        
+        else:
+	# Write to log
+        log = open('log.txt', 'a+')
+        log.write(host + ' completed iteration ' + str(iteration) + ' at time ' + str(datatime.now()) + ' NO UPDATE\n')
