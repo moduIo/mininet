@@ -147,23 +147,22 @@ while True:
 
 	# Compute new tables
         newRoutes = compute_tables(tables, routes, neighbors)
-        log = open('log.txt', 'a+')
-        log.write(host + ' completed computing tables...\n')
-        log.write(str(sorted(newRoutes)) + '\n')
-        log.write(str(sorted(routes)) + '\n')
-        log.close()
 
 	# Only pass DV on update
         if sorted(routes) == sorted(newRoutes):
             # Mark update for synchronization
             done = open('done.txt', 'a+')
-            done.write('x')
+            done.write('o')
             done.close()
 
 	    # Write to log
             log = open('log.txt', 'a+')
-            log.write(host + ' completed iteration ' + str(iteration) + ' at time ' + str(datetime.now()) + ' NO UPDATE\n')
+            log.write(host + ' completed iteration ' + str(iteration) + ' at time ' + str(datetime.now()) + ' NO UPDATE\n\n')
             log.close()
+            
+            # Cleanup for next iteration
+            tables = {}
+	    iteration += 1
 
         else:
 	    routes = newRoutes
@@ -178,9 +177,11 @@ while True:
 
 	    # Write completion time to log.txt
 	    log = open('log.txt', 'a+')
-	    log.write(host + ' completed iteration ' + str(iteration) + ' at ' + str(datetime.now()) + '\n')
+	    log.write(host + ' completed iteration ' + str(iteration) + ' at ' + str(datetime.now()) + '\n\n')
 	    log.close()
-	
+	    
+            # Cleanup for next iteration
+            tables = {}
             iteration += 1 # Track iteration for synchronization
 
 	    # Create command for system
