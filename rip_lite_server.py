@@ -48,7 +48,7 @@ def compute_tables(tables, routes, neighbors):
                 costs[field[0]] = cost
 
             # Otherwise add if new path is shorter, but don't go negative
-            elif cost < costs[field[0]] and cost > 0:
+            elif cost < costs[field[0]]:
                 dests[field[0]] = neighbor + ',' + str(cost)
                 costs[field[0]] = cost
 
@@ -91,6 +91,10 @@ with open('weights.txt', 'r') as f:
         # Store edge weights of incident links
         if host in entry:
             cost = entry[2].strip()
+
+            # Handle negative weight by poisoned reverse
+            if int(cost) < 0:
+                cost = str(sys.maxint)
 
 	    if host == entry[0]:
 	        dest = entry[1]
