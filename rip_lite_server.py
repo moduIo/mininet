@@ -174,7 +174,7 @@ while True:
 
 	# Compute new tables
 	log = open('log.txt', 'a+')
-        log.write('HOST ' + host + '==============\n')
+        log.write('HOST ' + host + '\n===============\n')
         log.close()
 
         newRoutes = compute_tables(tables, routes, neighbors, iteration)
@@ -185,9 +185,9 @@ while True:
 
 	# Write completion time to log.txt        
         if sorted(routes) == sorted(newRoutes):
-	    log.write(host + ' completed iteration ' + str(iteration) + ' at ' + str(datetime.now()) + ' --NO UPDATE\n\n')
+	    log.write(host + ' completed iteration ' + str(iteration) + ' at ' + str(datetime.now()) + ' --NO UPDATE\n===============\n\n')
         else:
-	    log.write(host + ' completed iteration ' + str(iteration) + ' at ' + str(datetime.now()) + '\n\n')
+	    log.write(host + ' completed iteration ' + str(iteration) + ' at ' + str(datetime.now()) + '\n===============\n\n')
 
 	log.close()
 
