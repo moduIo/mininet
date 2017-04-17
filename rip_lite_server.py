@@ -93,7 +93,7 @@ with open('weights.txt', 'r') as f:
         # Store edge weights of incident links
         if host in entry:
             cost = entry[2].strip()
-
+            
             # Handle negative weight by poisoned reverse
             if int(cost) < 0:
                 cost = str(1000000)
@@ -139,7 +139,6 @@ while True:
         done.close()
 
         while completed < iteration * 6:
-            clientSocket.close()
 	    time.sleep(.1)
             done = open('done.txt', 'r')
             completed = len(done.read())
@@ -147,22 +146,27 @@ while True:
 
 	# Compute new tables
         newRoutes = compute_tables(tables, routes, neighbors)
+	log = open('log.txt', 'a+')
+        log.write('\n---------\n' + str(sorted(routes)) + '\n')
+        log.write('---------\n' + str(sorted(newRoutes)) + '\n')
 
 	# Only pass DV on update
-        if sorted(routes) == sorted(newRoutes):
-            # Mark update for synchronization
-            done = open('done.txt', 'a+')
-            done.write('o')
-            done.close()
+        if False:
+            print 'fpp'
+        #if sorted(routes) == sorted(newRoutes):
+            # Write to done for synchronization
+            #done = open('done.txt', 'a+')
+            #done.write('o')
+            #done.close()
 
 	    # Write to log
-            log = open('log.txt', 'a+')
-            log.write(host + ' completed iteration ' + str(iteration) + ' at time ' + str(datetime.now()) + ' NO UPDATE\n\n')
-            log.close()
+            #log = open('log.txt', 'a+')
+            #log.write(host + ' completed iteration ' + str(iteration) + ' at time ' + str(datetime.now()) + ' NO UPDATE\n\n')
+            #log.close()
             
             # Cleanup for next iteration
-            tables = {}
-	    iteration += 1
+            #tables = {}
+	    #iteration += 1
 
         else:
 	    routes = newRoutes

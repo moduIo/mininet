@@ -1,96 +1,210 @@
-r4 completed iteration 1 at 2017-04-17 06:57:39.453248
 
-h1 completed iteration 1 at 2017-04-17 06:57:39.469717
+---------
+['h2,h2,2', 'r2,r2,1000000', 'r3,r3,5']
+---------
+['h2,h2,2', 'r1,r3,11', 'r2,r2,1000000', 'r3,r3,5', 'r4,r4,0']
+r4 completed iteration 1 at 2017-04-17 07:52:43.628363
 
-r3 completed iteration 1 at 2017-04-17 06:57:39.520510
 
-h2 completed iteration 1 at 2017-04-17 06:57:39.520938
+---------
+['r1,r1,2']
+---------
+['h1,h1,0', 'r1,r1,2', 'r2,r1,12', 'r3,r1,8']
+h1 completed iteration 1 at 2017-04-17 07:52:43.630444
 
-r2 completed iteration 1 at 2017-04-17 06:57:39.521402
 
-r1 completed iteration 1 at 2017-04-17 06:57:39.536602
+---------
+['r1,r1,10', 'r4,r4,1000000']
+---------
+['h1,r1,12', 'h2,r4,1000002', 'r1,r1,10', 'r2,r2,0', 'r3,r1,16', 'r4,r4,1000000']
+r2 completed iteration 1 at 2017-04-17 07:52:43.690750
 
-r1 completed iteration 2 at time 2017-04-17 06:57:39.584656 NO UPDATE
 
-r4 completed iteration 2 at time 2017-04-17 06:57:39.674160 NO UPDATE
+---------
+['r1,r1,6', 'r4,r4,5']
+---------
+['h1,r1,8', 'h2,r4,7', 'r1,r1,6', 'r2,r1,16', 'r3,r3,0', 'r4,r4,5']
+r3 completed iteration 1 at 2017-04-17 07:52:43.691216
 
-h2 completed iteration 2 at 2017-04-17 06:57:39.675499
 
-r3 completed iteration 2 at time 2017-04-17 06:57:39.677311 NO UPDATE
+---------
+['r4,r4,2']
+---------
+['h2,h2,0', 'r2,r4,1000002', 'r3,r4,7', 'r4,r4,2']
+h2 completed iteration 1 at 2017-04-17 07:52:43.691567
 
-r3 completed iteration 3 at 2017-04-17 06:57:39.678273
 
-r2 completed iteration 2 at 2017-04-17 06:57:39.679055
+---------
+['h1,h1,2', 'r2,r2,10', 'r3,r3,6']
+---------
+['h1,h1,2', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6', 'r4,r3,11']
+r1 completed iteration 1 at 2017-04-17 07:52:43.710262
 
-h1 completed iteration 2 at 2017-04-17 06:57:39.684020
 
-r1 completed iteration 3 at 2017-04-17 06:57:39.685010
+---------
+['h1,h1,2', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6', 'r4,r3,11']
+---------
+['h1,h1,2', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6', 'r4,r3,11']
+r1 completed iteration 2 at 2017-04-17 07:52:43.757234
 
-r2 completed iteration 3 at time 2017-04-17 06:57:39.752921 NO UPDATE
 
-h1 completed iteration 3 at 2017-04-17 06:57:39.757452
+---------
+['h1,r1,12', 'h2,r4,1000002', 'r1,r1,10', 'r2,r2,0', 'r3,r1,16', 'r4,r4,1000000']
+---------
+['h1,r1,12', 'h2,r1,12', 'r1,r1,10', 'r2,r2,0', 'r3,r1,15', 'r4,r1,10']
+r2 completed iteration 2 at 2017-04-17 07:52:43.840175
 
-r1 completed iteration 4 at 2017-04-17 06:57:39.760357
 
-r4 completed iteration 3 at 2017-04-17 06:57:39.783243
+---------
+['h2,h2,2', 'r1,r3,11', 'r2,r2,1000000', 'r3,r3,5', 'r4,r4,0']
+---------
+['h2,h2,2', 'r1,r3,11', 'r2,r2,1000000', 'r3,r3,5', 'r4,r4,0']
+r4 completed iteration 2 at 2017-04-17 07:52:43.841076
 
-h1 completed iteration 4 at 2017-04-17 06:57:39.786474
 
-h2 completed iteration 3 at 2017-04-17 06:57:39.811769
+---------
+['h1,r1,8', 'h2,r4,7', 'r1,r1,6', 'r2,r1,16', 'r3,r3,0', 'r4,r4,5']
+---------
+['h1,r1,8', 'h2,r4,7', 'r1,r1,6', 'r2,r1,16', 'r3,r3,0', 'r4,r4,5']
+r3 completed iteration 2 at 2017-04-17 07:52:43.845090
 
-r4 completed iteration 4 at 2017-04-17 06:57:39.814172
 
-h2 completed iteration 4 at 2017-04-17 06:57:39.845741
+---------
+['h2,h2,0', 'r2,r4,1000002', 'r3,r4,7', 'r4,r4,2']
+---------
+['h2,h2,0', 'r1,r4,13', 'r2,r4,1000002', 'r3,r4,7', 'r4,r4,2']
+h2 completed iteration 2 at 2017-04-17 07:52:43.847678
 
-r2 completed iteration 4 at time 2017-04-17 06:57:39.859614 NO UPDATE
 
-r2 completed iteration 5 at 2017-04-17 06:57:39.859937
+---------
+['h1,h1,0', 'r1,r1,2', 'r2,r1,12', 'r3,r1,8']
+---------
+['h1,h1,0', 'r1,r1,2', 'r2,r1,12', 'r3,r1,8', 'r4,r1,13']
+h1 completed iteration 2 at 2017-04-17 07:52:43.858080
 
-r3 completed iteration 4 at 2017-04-17 06:57:39.860366
 
-r1 completed iteration 5 at time 2017-04-17 06:57:39.890153 NO UPDATE
+---------
+['h1,h1,0', 'r1,r1,2', 'r2,r1,12', 'r3,r1,8', 'r4,r1,13']
+---------
+['h1,h1,0', 'r1,r1,2', 'r2,r1,12', 'r3,r1,8', 'r4,r1,13']
+h1 completed iteration 3 at 2017-04-17 07:52:43.926317
 
-r3 completed iteration 5 at time 2017-04-17 06:57:39.894068 NO UPDATE
 
-r3 completed iteration 6 at time 2017-04-17 06:57:39.894296 NO UPDATE
+---------
+['h1,h1,2', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6', 'r4,r3,11']
+---------
+['h1,h1,2', 'h2,h1,1000004', 'r1,r1,0', 'r2,h1,2', 'r3,r3,6', 'r4,r3,11']
+r1 completed iteration 3 at 2017-04-17 07:52:43.977492
 
-r4 completed iteration 5 at time 2017-04-17 06:57:39.946147 NO UPDATE
 
-r4 completed iteration 6 at 2017-04-17 06:57:39.946659
+---------
+['h1,r1,12', 'h2,r1,12', 'r1,r1,10', 'r2,r2,0', 'r3,r1,15', 'r4,r1,10']
+---------
+['h1,r1,12', 'h2,r1,12', 'r1,r1,10', 'r2,r2,0', 'r3,r1,15', 'r4,r1,10']
+r2 completed iteration 3 at 2017-04-17 07:52:44.007151
 
-h2 completed iteration 5 at 2017-04-17 06:57:39.962117
 
-r4 completed iteration 7 at time 2017-04-17 06:57:39.964286 NO UPDATE
+---------
+['h2,h2,2', 'r1,r3,11', 'r2,r2,1000000', 'r3,r3,5', 'r4,r4,0']
+---------
+['h1,h2,14', 'h2,h2,2', 'r1,r3,11', 'r2,h2,2', 'r3,r3,5', 'r4,r4,0']
+r4 completed iteration 3 at 2017-04-17 07:52:44.011466
 
-r1 completed iteration 6 at time 2017-04-17 06:57:39.991659 NO UPDATE
 
-r1 completed iteration 7 at time 2017-04-17 06:57:39.991999 NO UPDATE
+---------
+['h2,h2,0', 'r1,r4,13', 'r2,r4,1000002', 'r3,r4,7', 'r4,r4,2']
+---------
+['h2,h2,0', 'r1,r4,13', 'r2,r4,1000002', 'r3,r4,7', 'r4,r4,2']
+h2 completed iteration 3 at 2017-04-17 07:52:44.017952
 
-r1 completed iteration 8 at time 2017-04-17 06:57:39.992174 NO UPDATE
 
-r2 completed iteration 6 at time 2017-04-17 06:57:39.993386 NO UPDATE
+---------
+['h1,r1,8', 'h2,r4,7', 'r1,r1,6', 'r2,r1,16', 'r3,r3,0', 'r4,r4,5']
+---------
+['h1,r4,7', 'h2,r4,7', 'r1,r4,5', 'r2,r4,15', 'r3,r3,0', 'r4,r4,5']
+r3 completed iteration 3 at 2017-04-17 07:52:44.028163
 
-r2 completed iteration 7 at time 2017-04-17 06:57:39.993640 NO UPDATE
 
-r2 completed iteration 8 at time 2017-04-17 06:57:39.993805 NO UPDATE
+---------
+['h1,r4,7', 'h2,r4,7', 'r1,r4,5', 'r2,r4,15', 'r3,r3,0', 'r4,r4,5']
+---------
+['h1,r4,7', 'h2,r4,7', 'r1,r4,5', 'r2,r4,15', 'r3,r3,0', 'r4,r4,5']
+r3 completed iteration 4 at 2017-04-17 07:52:44.073519
 
-r3 completed iteration 7 at time 2017-04-17 06:57:39.995052 NO UPDATE
 
-r3 completed iteration 8 at time 2017-04-17 06:57:39.995311 NO UPDATE
+---------
+['h1,h1,0', 'r1,r1,2', 'r2,r1,12', 'r3,r1,8', 'r4,r1,13']
+---------
+['h1,h1,0', 'h2,r1,1000006', 'r1,r1,2', 'r2,r1,4', 'r3,r1,8', 'r4,r1,13']
+h1 completed iteration 4 at 2017-04-17 07:52:44.090729
 
-r4 completed iteration 8 at time 2017-04-17 06:57:40.065318 NO UPDATE
 
-r4 completed iteration 9 at time 2017-04-17 06:57:40.065697 NO UPDATE
+---------
+['h1,h1,2', 'h2,h1,1000004', 'r1,r1,0', 'r2,h1,2', 'r3,r3,6', 'r4,r3,11']
+---------
+['h1,h1,2', 'h2,h1,9', 'r1,r1,0', 'r2,h1,2', 'r3,h1,2', 'r4,h1,7']
+r1 completed iteration 4 at 2017-04-17 07:52:44.093015
 
-r4 completed iteration 10 at time 2017-04-17 06:57:40.065960 NO UPDATE
 
-r4 completed iteration 11 at time 2017-04-17 06:57:40.066401 NO UPDATE
+---------
+['h1,r1,12', 'h2,r1,12', 'r1,r1,10', 'r2,r2,0', 'r3,r1,15', 'r4,r1,10']
+---------
+['h1,r1,12', 'h2,r1,12', 'r1,r1,10', 'r2,r2,0', 'r3,r1,15', 'r4,r1,10']
+r2 completed iteration 4 at 2017-04-17 07:52:44.145442
 
-r1 completed iteration 9 at time 2017-04-17 06:57:40.093346 NO UPDATE
 
-r1 completed iteration 10 at time 2017-04-17 06:57:40.093637 NO UPDATE
+---------
+['h1,h2,14', 'h2,h2,2', 'r1,r3,11', 'r2,h2,2', 'r3,r3,5', 'r4,r4,0']
+---------
+['h1,r2,10', 'h2,h2,2', 'r1,r2,8', 'r2,h2,2', 'r3,r2,2', 'r4,r4,0']
+r4 completed iteration 4 at 2017-04-17 07:52:44.160928
 
-r1 completed iteration 11 at time 2017-04-17 06:57:40.093841 NO UPDATE
 
-r4 completed iteration 12 at time 2017-04-17 06:57:40.167751 NO UPDATE
+---------
+['h2,h2,0', 'r1,r4,13', 'r2,r4,1000002', 'r3,r4,7', 'r4,r4,2']
+---------
+['h1,r4,16', 'h2,h2,0', 'r1,r4,13', 'r2,r4,4', 'r3,r4,7', 'r4,r4,2']
+h2 completed iteration 4 at 2017-04-17 07:52:44.170296
+
+
+---------
+['h1,r4,16', 'h2,h2,0', 'r1,r4,13', 'r2,r4,4', 'r3,r4,7', 'r4,r4,2']
+---------
+['h1,r4,12', 'h2,h2,0', 'r1,r4,10', 'r2,r4,4', 'r3,r4,4', 'r4,r4,2']
+h2 completed iteration 5 at 2017-04-17 07:52:44.197226
+
+
+---------
+['h1,h1,0', 'h2,r1,1000006', 'r1,r1,2', 'r2,r1,4', 'r3,r1,8', 'r4,r1,13']
+---------
+['h1,h1,0', 'h2,r1,11', 'r1,r1,2', 'r2,r1,4', 'r3,r1,4', 'r4,r1,9']
+h1 completed iteration 5 at 2017-04-17 07:52:44.222131
+
+
+---------
+['h1,h1,2', 'h2,h1,9', 'r1,r1,0', 'r2,h1,2', 'r3,h1,2', 'r4,h1,7']
+---------
+['h1,h1,2', 'h2,h1,9', 'r1,r1,0', 'r2,h1,2', 'r3,h1,2', 'r4,h1,7']
+r1 completed iteration 5 at 2017-04-17 07:52:44.227416
+
+
+---------
+['h1,r1,12', 'h2,r1,12', 'r1,r1,10', 'r2,r2,0', 'r3,r1,15', 'r4,r1,10']
+---------
+['h1,r1,12', 'h2,r1,12', 'r1,r1,10', 'r2,r2,0', 'r3,r1,15', 'r4,r1,10']
+r2 completed iteration 5 at 2017-04-17 07:52:44.265811
+
+
+---------
+['h1,r2,10', 'h2,h2,2', 'r1,r2,8', 'r2,h2,2', 'r3,r2,2', 'r4,r4,0']
+---------
+['h1,r2,10', 'h2,h2,2', 'r1,r2,8', 'r2,h2,2', 'r3,r2,2', 'r4,r4,0']
+r4 completed iteration 5 at 2017-04-17 07:52:44.287430
+
+
+---------
+['h1,r4,7', 'h2,r4,7', 'r1,r4,5', 'r2,r4,15', 'r3,r3,0', 'r4,r4,5']
+---------
+['h1,r4,7', 'h2,r4,7', 'r1,r4,5', 'r2,r4,15', 'r3,r3,0', 'r4,r4,5']
+r3 completed iteration 5 at 2017-04-17 07:52:44.293248
 
