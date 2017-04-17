@@ -17,7 +17,7 @@ from datetime import datetime
 #
 # Implements Bellman-Ford algorithm
 #
-def compute_tables(tables, routes, neighbors):
+def compute_tables(tables, routes, neighbors, iteration):
     dests = {}          # (key, value) pairs (dest, {next, cost})
     updatedRoutes = []  # Holds updated routing table
     costs = {}          # Holds current cost to node
@@ -60,7 +60,7 @@ def compute_tables(tables, routes, neighbors):
 	        dest = field[0]
 
             # Ignore self paths
-            if dest == field[1]:
+            if dest == field[1] and iteration != 1:
 	        continue
 
             # Cost >= 1000000 are dead links
@@ -176,7 +176,7 @@ while True:
         log.write('HOST ' + host + '\n')
         log.close()
 
-        newRoutes = compute_tables(tables, routes, neighbors)
+        newRoutes = compute_tables(tables, routes, neighbors, iteration)
 	log = open('log.txt', 'a+')
         log.write('\n---------\n' + str(sorted(routes)) + '\n')
         log.write('---------\n' + str(sorted(newRoutes)) + '\n')

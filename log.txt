@@ -11,8 +11,8 @@ Updated routing table
 ---------
 ['h2,h2,2', 'r2,r2,1000000', 'r3,r3,5']
 ---------
-['h2,h2,2', 'r3,r3,5', 'r4,r4,0']
-r4 completed iteration 1 at 2017-04-17 09:15:13.248544
+['h2,h2,2', 'r1,r3,11', 'r3,r3,5', 'r4,r4,0']
+r4 completed iteration 1 at 2017-04-17 09:18:37.543544
 
 HOST h1
 Copied original routing table
@@ -23,8 +23,8 @@ Updated routing table
 ---------
 ['r1,r1,2']
 ---------
-['h1,h1,0', 'r1,r1,2']
-h1 completed iteration 1 at 2017-04-17 09:15:13.265518
+['h1,h1,0', 'r1,r1,2', 'r2,r1,12', 'r3,r1,8']
+h1 completed iteration 1 at 2017-04-17 09:18:37.556537
 
 HOST r3
 Copied original routing table
@@ -37,8 +37,8 @@ Updated routing table
 ---------
 ['r1,r1,6', 'r4,r4,5']
 ---------
-['r1,r1,6', 'r3,r3,0', 'r4,r4,5']
-r3 completed iteration 1 at 2017-04-17 09:15:13.315573
+['h1,r1,8', 'h2,r4,7', 'r1,r1,6', 'r2,r1,16', 'r3,r3,0', 'r4,r4,5']
+r3 completed iteration 1 at 2017-04-17 09:18:37.606912
 
 HOST h2
 Copied original routing table
@@ -49,9 +49,7 @@ Updated routing table
 ---------
 ['r4,r4,2']
 ---------
-['h2,h2,0', 'r4,r4,2']
-h2 completed iteration 1 at 2017-04-17 09:15:13.316049
-
+['h2,h2,0', 'r3,r4,7', 'r4,r4,2']
 HOST r2
 Copied original routing table
 Starting r1
@@ -63,8 +61,10 @@ Updated routing table
 ---------
 ['r1,r1,10', 'r4,r4,1000000']
 ---------
-['r1,r1,10', 'r2,r2,0']
-r2 completed iteration 1 at 2017-04-17 09:15:13.316440
+['h1,r1,12', 'r1,r1,10', 'r2,r2,0', 'r3,r1,16']
+r2 completed iteration 1 at 2017-04-17 09:18:37.608000
+
+h2 completed iteration 1 at 2017-04-17 09:18:37.607576
 
 HOST r1
 Copied original routing table
@@ -79,8 +79,8 @@ Updated routing table
 ---------
 ['h1,h1,2', 'r2,r2,10', 'r3,r3,6']
 ---------
-['h1,h1,2', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6']
-r1 completed iteration 1 at 2017-04-17 09:15:13.335280
+['h1,h1,2', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6', 'r4,r3,11']
+r1 completed iteration 1 at 2017-04-17 09:18:37.626357
 
 HOST r1
 Copied original routing table
@@ -93,26 +93,17 @@ Computed r3
 Computed Bellman-Ford
 Updated routing table
 ---------
-['h1,h1,2', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6']
+['h1,h1,2', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6', 'r4,r3,11']
 ---------
-['h1,h1,2', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6']
-r1 completed iteration 2 at 2017-04-17 09:15:13.374538
+['h1,h1,2', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6', 'r4,r3,11']
+r1 completed iteration 2 at 2017-04-17 09:18:37.674875
 
-HOST h2
-Copied original routing table
-Starting r4
-Computed r4
-Computed Bellman-Ford
-Updated routing table
----------
-['h2,h2,0', 'r4,r4,2']
----------
-['h2,h2,0', 'r4,r4,2']
-h2 completed iteration 2 at 2017-04-17 09:15:13.469088
-
+HOST r2
 HOST r4
 Copied original routing table
 Starting r2
+r2 is not in costs
+r2 is not in costs
 r2 is not in costs
 r2 is not in costs
 Computed r2
@@ -123,24 +114,11 @@ Computed h2
 Computed Bellman-Ford
 Updated routing table
 ---------
-['h2,h2,2', 'r3,r3,5', 'r4,r4,0']
+['h2,h2,2', 'r1,r3,11', 'r3,r3,5', 'r4,r4,0']
 ---------
-['h2,h2,2', 'r3,r3,5', 'r4,r4,0']
-r4 completed iteration 2 at 2017-04-17 09:15:13.469785
+['h1,r3,17', 'h2,h2,2', 'r1,r3,11', 'r3,r3,5', 'r4,r4,0']
+r4 completed iteration 2 at 2017-04-17 09:18:37.763943
 
-HOST h1
-Copied original routing table
-Starting r1
-Computed r1
-Computed Bellman-Ford
-Updated routing table
----------
-['h1,h1,0', 'r1,r1,2']
----------
-['h1,h1,0', 'r1,r1,2']
-h1 completed iteration 2 at 2017-04-17 09:15:13.472717
-
-HOST r2
 Copied original routing table
 Starting r1
 Computed r1
@@ -148,40 +126,15 @@ Starting r4
 r4 is not in costs
 r4 is not in costs
 r4 is not in costs
+r4 is not in costs
 Computed r4
 Computed Bellman-Ford
 Updated routing table
 ---------
-['r1,r1,10', 'r2,r2,0']
+['h1,r1,12', 'r1,r1,10', 'r2,r2,0', 'r3,r1,16']
 ---------
-['r1,r1,10', 'r2,r2,0']
-r2 completed iteration 2 at 2017-04-17 09:15:13.473202
-
-HOST r3
-Copied original routing table
-Starting r1
-Computed r1
-Starting r4
-Computed r4
-Computed Bellman-Ford
-Updated routing table
----------
-['r1,r1,6', 'r3,r3,0', 'r4,r4,5']
----------
-['r1,r1,6', 'r3,r3,0', 'r4,r4,5']
-r3 completed iteration 2 at 2017-04-17 09:15:13.473681
-
-HOST h1
-Copied original routing table
-Starting r1
-Computed r1
-Computed Bellman-Ford
-Updated routing table
----------
-['h1,h1,0', 'r1,r1,2']
----------
-['h1,h1,0', 'r1,r1,2']
-h1 completed iteration 3 at 2017-04-17 09:15:13.544897
+['h1,r1,12', 'r1,r1,10', 'r2,r2,0', 'r3,r1,16']
+r2 completed iteration 2 at 2017-04-17 09:18:37.764483
 
 HOST h2
 Copied original routing table
@@ -190,45 +143,10 @@ Computed r4
 Computed Bellman-Ford
 Updated routing table
 ---------
-['h2,h2,0', 'r4,r4,2']
+['h2,h2,0', 'r3,r4,7', 'r4,r4,2']
 ---------
-['h2,h2,0', 'r4,r4,2']
-h2 completed iteration 3 at 2017-04-17 09:15:13.638555
-
-HOST r2
-Copied original routing table
-Starting r1
-Computed r1
-Starting r4
-r4 is not in costs
-r4 is not in costs
-r4 is not in costs
-Computed r4
-Computed Bellman-Ford
-Updated routing table
----------
-['r1,r1,10', 'r2,r2,0']
----------
-['r1,r1,10', 'r2,r2,0']
-r2 completed iteration 3 at 2017-04-17 09:15:13.641081
-
-HOST r4
-Copied original routing table
-Starting r2
-r2 is not in costs
-r2 is not in costs
-Computed r2
-Starting r3
-Computed r3
-Starting h2
-Computed h2
-Computed Bellman-Ford
-Updated routing table
----------
-['h2,h2,2', 'r3,r3,5', 'r4,r4,0']
----------
-['h2,h2,2', 'r3,r3,5', 'r4,r4,0']
-r4 completed iteration 3 at 2017-04-17 09:15:13.641664
+['h2,h2,0', 'r1,r4,13', 'r3,r4,7', 'r4,r4,2']
+h2 completed iteration 2 at 2017-04-17 09:18:37.766414
 
 HOST r3
 Copied original routing table
@@ -239,10 +157,34 @@ Computed r4
 Computed Bellman-Ford
 Updated routing table
 ---------
-['r1,r1,6', 'r3,r3,0', 'r4,r4,5']
+['h1,r1,8', 'h2,r4,7', 'r1,r1,6', 'r2,r1,16', 'r3,r3,0', 'r4,r4,5']
 ---------
-['r1,r1,6', 'r3,r3,0', 'r4,r4,5']
-r3 completed iteration 3 at 2017-04-17 09:15:13.644695
+['h1,r1,8', 'h2,r4,7', 'r1,r1,6', 'r2,r1,16', 'r3,r3,0', 'r4,r4,5']
+r3 completed iteration 2 at 2017-04-17 09:18:37.768183
+
+HOST h1
+Copied original routing table
+Starting r1
+Computed r1
+Computed Bellman-Ford
+Updated routing table
+---------
+['h1,h1,0', 'r1,r1,2', 'r2,r1,12', 'r3,r1,8']
+---------
+['h1,h1,0', 'r1,r1,2', 'r2,r1,12', 'r3,r1,8', 'r4,r1,13']
+h1 completed iteration 2 at 2017-04-17 09:18:37.773217
+
+HOST h1
+Copied original routing table
+Starting r1
+Computed r1
+Computed Bellman-Ford
+Updated routing table
+---------
+['h1,h1,0', 'r1,r1,2', 'r2,r1,12', 'r3,r1,8', 'r4,r1,13']
+---------
+['h1,h1,0', 'r1,r1,2', 'r2,r1,12', 'r3,r1,8', 'r4,r1,13']
+h1 completed iteration 3 at 2017-04-17 09:18:37.843766
 
 HOST r1
 Copied original routing table
@@ -255,10 +197,96 @@ Computed r3
 Computed Bellman-Ford
 Updated routing table
 ---------
-['h1,h1,2', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6']
+['h1,h1,2', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6', 'r4,r3,11']
 ---------
-['h1,h1,2', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6']
-r1 completed iteration 3 at 2017-04-17 09:15:13.645313
+['h1,h1,2', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6', 'r4,r3,11']
+r1 completed iteration 3 at 2017-04-17 09:18:37.891150
+
+HOST r4
+Copied original routing table
+Starting r2
+r2 is not in costs
+r2 is not in costs
+r2 is not in costs
+r2 is not in costs
+r2 is not in costs
+r2 is not in costs
+Computed r2
+Starting r3
+Computed r3
+Starting h2
+Computed h2
+Computed Bellman-Ford
+Updated routing table
+---------
+['h1,r3,17', 'h2,h2,2', 'r1,r3,11', 'r3,r3,5', 'r4,r4,0']
+---------
+['h1,h2,10', 'h2,h2,2', 'r1,r3,11', 'r2,h2,18', 'r3,r3,5', 'r4,r4,0']
+r4 completed iteration 3 at 2017-04-17 09:18:37.933450
+
+HOST r2
+Copied original routing table
+Starting r1
+Computed r1
+Starting r4
+Computed r4
+Computed Bellman-Ford
+Updated routing table
+---------
+['h1,r1,12', 'r1,r1,10', 'r2,r2,0', 'r3,r1,16']
+---------
+['h1,r1,12', 'r1,r1,10', 'r2,r2,0', 'r3,r1,16', 'r4,r1,21']
+r2 completed iteration 3 at 2017-04-17 09:18:37.936613
+
+HOST h2
+Copied original routing table
+Starting r4
+Computed r4
+Computed Bellman-Ford
+Updated routing table
+---------
+['h2,h2,0', 'r1,r4,13', 'r3,r4,7', 'r4,r4,2']
+---------
+['h1,r4,19', 'h2,h2,0', 'r1,r4,13', 'r3,r4,7', 'r4,r4,2']
+h2 completed iteration 3 at 2017-04-17 09:18:37.939438
+
+HOST r3
+Copied original routing table
+Starting r1
+Computed r1
+Starting r4
+Computed r4
+Computed Bellman-Ford
+Updated routing table
+---------
+['h1,r1,8', 'h2,r4,7', 'r1,r1,6', 'r2,r1,16', 'r3,r3,0', 'r4,r4,5']
+---------
+['h1,r1,8', 'h2,r4,7', 'r1,r1,6', 'r2,r1,16', 'r3,r3,0', 'r4,r4,5']
+r3 completed iteration 3 at 2017-04-17 09:18:37.941182
+
+HOST h2
+Copied original routing table
+Starting r4
+Computed r4
+Computed Bellman-Ford
+Updated routing table
+---------
+['h1,r4,19', 'h2,h2,0', 'r1,r4,13', 'r3,r4,7', 'r4,r4,2']
+---------
+['h1,r4,12', 'h2,h2,0', 'r1,r4,13', 'r2,r4,20', 'r3,r4,7', 'r4,r4,2']
+h2 completed iteration 4 at 2017-04-17 09:18:37.995729
+
+HOST h1
+Copied original routing table
+Starting r1
+Computed r1
+Computed Bellman-Ford
+Updated routing table
+---------
+['h1,h1,0', 'r1,r1,2', 'r2,r1,12', 'r3,r1,8', 'r4,r1,13']
+---------
+['h1,h1,0', 'r1,r1,2', 'r2,r1,12', 'r3,r1,8', 'r4,r1,13']
+h1 completed iteration 4 at 2017-04-17 09:18:38.009381
 
 HOST r1
 Copied original routing table
@@ -271,28 +299,14 @@ Computed r3
 Computed Bellman-Ford
 Updated routing table
 ---------
-['h1,h1,2', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6']
+['h1,h1,2', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6', 'r4,r3,11']
 ---------
-['h1,h1,2', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6']
-r1 completed iteration 4 at 2017-04-17 09:15:13.713960
-
-HOST h2
-Copied original routing table
-Starting r4
-Computed r4
-Computed Bellman-Ford
-Updated routing table
----------
-['h2,h2,0', 'r4,r4,2']
----------
-['h2,h2,0', 'r4,r4,2']
-h2 completed iteration 4 at 2017-04-17 09:15:13.807335
+['h1,h1,2', 'h2,h1,9', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6', 'r4,r3,11']
+r1 completed iteration 4 at 2017-04-17 09:18:38.009846
 
 HOST r4
 Copied original routing table
 Starting r2
-r2 is not in costs
-r2 is not in costs
 Computed r2
 Starting r3
 Computed r3
@@ -301,39 +315,24 @@ Computed h2
 Computed Bellman-Ford
 Updated routing table
 ---------
-['h2,h2,2', 'r3,r3,5', 'r4,r4,0']
+['h1,h2,10', 'h2,h2,2', 'r1,r3,11', 'r2,h2,18', 'r3,r3,5', 'r4,r4,0']
 ---------
-['h2,h2,2', 'r3,r3,5', 'r4,r4,0']
-r4 completed iteration 4 at 2017-04-17 09:15:13.810530
-
-HOST h1
-Copied original routing table
-Starting r1
-Computed r1
-Computed Bellman-Ford
-Updated routing table
----------
-['h1,h1,0', 'r1,r1,2']
----------
-['h1,h1,0', 'r1,r1,2']
-h1 completed iteration 4 at 2017-04-17 09:15:13.812232
+['h1,h2,10', 'h2,h2,2', 'r1,r3,11', 'r2,h2,18', 'r3,r3,5', 'r4,r4,0']
+r4 completed iteration 4 at 2017-04-17 09:18:38.085492
 
 HOST r2
 Copied original routing table
 Starting r1
 Computed r1
 Starting r4
-r4 is not in costs
-r4 is not in costs
-r4 is not in costs
 Computed r4
 Computed Bellman-Ford
 Updated routing table
 ---------
-['r1,r1,10', 'r2,r2,0']
+['h1,r1,12', 'r1,r1,10', 'r2,r2,0', 'r3,r1,16', 'r4,r1,21']
 ---------
-['r1,r1,10', 'r2,r2,0']
-r2 completed iteration 4 at 2017-04-17 09:15:13.812721
+['h1,r1,12', 'r1,r1,10', 'r2,r2,0', 'r3,r1,16', 'r4,r1,21']
+r2 completed iteration 4 at 2017-04-17 09:18:38.092533
 
 HOST r3
 Copied original routing table
@@ -344,10 +343,10 @@ Computed r4
 Computed Bellman-Ford
 Updated routing table
 ---------
-['r1,r1,6', 'r3,r3,0', 'r4,r4,5']
+['h1,r1,8', 'h2,r4,7', 'r1,r1,6', 'r2,r1,16', 'r3,r3,0', 'r4,r4,5']
 ---------
-['r1,r1,6', 'r3,r3,0', 'r4,r4,5']
-r3 completed iteration 4 at 2017-04-17 09:15:13.813205
+['h1,r1,8', 'h2,r4,7', 'r1,r1,6', 'r2,r1,16', 'r3,r3,0', 'r4,r4,5']
+r3 completed iteration 4 at 2017-04-17 09:18:38.094142
 
 HOST r3
 Copied original routing table
@@ -358,39 +357,10 @@ Computed r4
 Computed Bellman-Ford
 Updated routing table
 ---------
-['r1,r1,6', 'r3,r3,0', 'r4,r4,5']
+['h1,r1,8', 'h2,r4,7', 'r1,r1,6', 'r2,r1,16', 'r3,r3,0', 'r4,r4,5']
 ---------
-['r1,r1,6', 'r3,r3,0', 'r4,r4,5']
-r3 completed iteration 5 at 2017-04-17 09:15:13.890567
-
-HOST h2
-Copied original routing table
-Starting r4
-Computed r4
-Computed Bellman-Ford
-Updated routing table
----------
-['h2,h2,0', 'r4,r4,2']
----------
-['h2,h2,0', 'r4,r4,2']
-h2 completed iteration 5 at 2017-04-17 09:15:13.985302
-
-HOST r2
-Copied original routing table
-Starting r1
-Computed r1
-Starting r4
-r4 is not in costs
-r4 is not in costs
-r4 is not in costs
-Computed r4
-Computed Bellman-Ford
-Updated routing table
----------
-['r1,r1,10', 'r2,r2,0']
----------
-['r1,r1,10', 'r2,r2,0']
-r2 completed iteration 5 at 2017-04-17 09:15:13.986038
+['h1,r1,8', 'h2,r4,7', 'r1,r1,6', 'r2,r1,16', 'r3,r3,0', 'r4,r4,5']
+r3 completed iteration 5 at 2017-04-17 09:18:38.133574
 
 HOST h1
 Copied original routing table
@@ -399,10 +369,10 @@ Computed r1
 Computed Bellman-Ford
 Updated routing table
 ---------
-['h1,h1,0', 'r1,r1,2']
+['h1,h1,0', 'r1,r1,2', 'r2,r1,12', 'r3,r1,8', 'r4,r1,13']
 ---------
-['h1,h1,0', 'r1,r1,2']
-h1 completed iteration 5 at 2017-04-17 09:15:13.988317
+['h1,h1,0', 'h2,r1,11', 'r1,r1,2', 'r2,r1,12', 'r3,r1,8', 'r4,r1,13']
+h1 completed iteration 5 at 2017-04-17 09:18:38.139938
 
 HOST r1
 Copied original routing table
@@ -415,16 +385,26 @@ Computed r3
 Computed Bellman-Ford
 Updated routing table
 ---------
-['h1,h1,2', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6']
+['h1,h1,2', 'h2,h1,9', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6', 'r4,r3,11']
 ---------
-['h1,h1,2', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6']
-r1 completed iteration 5 at 2017-04-17 09:15:13.989201
+['h1,h1,2', 'h2,h1,9', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6', 'r4,r3,11']
+r1 completed iteration 5 at 2017-04-17 09:18:38.140439
+
+HOST h2
+Copied original routing table
+Starting r4
+Computed r4
+Computed Bellman-Ford
+Updated routing table
+---------
+['h1,r4,12', 'h2,h2,0', 'r1,r4,13', 'r2,r4,20', 'r3,r4,7', 'r4,r4,2']
+---------
+['h1,r4,12', 'h2,h2,0', 'r1,r4,13', 'r2,r4,20', 'r3,r4,7', 'r4,r4,2']
+h2 completed iteration 5 at 2017-04-17 09:18:38.216091
 
 HOST r4
 Copied original routing table
 Starting r2
-r2 is not in costs
-r2 is not in costs
 Computed r2
 Starting r3
 Computed r3
@@ -433,10 +413,78 @@ Computed h2
 Computed Bellman-Ford
 Updated routing table
 ---------
-['h2,h2,2', 'r3,r3,5', 'r4,r4,0']
+['h1,h2,10', 'h2,h2,2', 'r1,r3,11', 'r2,h2,18', 'r3,r3,5', 'r4,r4,0']
 ---------
-['h2,h2,2', 'r3,r3,5', 'r4,r4,0']
-r4 completed iteration 5 at 2017-04-17 09:15:13.989684
+['h1,h2,10', 'h2,h2,2', 'r1,r3,11', 'r2,h2,18', 'r3,r3,5', 'r4,r4,0']
+r4 completed iteration 5 at 2017-04-17 09:18:38.217847
+
+HOST r2
+Copied original routing table
+Starting r1
+Computed r1
+Starting r4
+Computed r4
+Computed Bellman-Ford
+Updated routing table
+---------
+['h1,r1,12', 'r1,r1,10', 'r2,r2,0', 'r3,r1,16', 'r4,r1,21']
+---------
+['h1,r1,12', 'r1,r1,10', 'r2,r2,0', 'r3,r1,16', 'r4,r1,21']
+r2 completed iteration 5 at 2017-04-17 09:18:38.232544
+
+HOST h1
+Copied original routing table
+Starting r1
+Computed r1
+Computed Bellman-Ford
+Updated routing table
+---------
+['h1,h1,0', 'h2,r1,11', 'r1,r1,2', 'r2,r1,12', 'r3,r1,8', 'r4,r1,13']
+---------
+['h1,h1,0', 'h2,r1,11', 'r1,r1,2', 'r2,r1,12', 'r3,r1,8', 'r4,r1,13']
+h1 completed iteration 6 at 2017-04-17 09:18:41.168814
+
+HOST h2
+Copied original routing table
+Starting r4
+Computed r4
+Computed Bellman-Ford
+Updated routing table
+---------
+['h1,r4,12', 'h2,h2,0', 'r1,r4,13', 'r2,r4,20', 'r3,r4,7', 'r4,r4,2']
+---------
+['h1,r4,12', 'h2,h2,0', 'r1,r4,13', 'r2,r4,20', 'r3,r4,7', 'r4,r4,2']
+h2 completed iteration 6 at 2017-04-17 09:18:41.175197
+
+HOST r4
+Copied original routing table
+Starting r2
+Computed r2
+Starting r3
+Computed r3
+Starting h2
+Computed h2
+Computed Bellman-Ford
+Updated routing table
+---------
+['h1,h2,10', 'h2,h2,2', 'r1,r3,11', 'r2,h2,18', 'r3,r3,5', 'r4,r4,0']
+---------
+['h1,h2,10', 'h2,h2,2', 'r1,r3,11', 'r2,h2,18', 'r3,r3,5', 'r4,r4,0']
+r4 completed iteration 6 at 2017-04-17 09:18:41.175695
+
+HOST r2
+Copied original routing table
+Starting r1
+Computed r1
+Starting r4
+Computed r4
+Computed Bellman-Ford
+Updated routing table
+---------
+['h1,r1,12', 'r1,r1,10', 'r2,r2,0', 'r3,r1,16', 'r4,r1,21']
+---------
+['h1,r1,12', 'r1,r1,10', 'r2,r2,0', 'r3,r1,16', 'r4,r1,21']
+r2 completed iteration 6 at 2017-04-17 09:18:41.184529
 
 HOST r1
 Copied original routing table
@@ -449,55 +497,10 @@ Computed r3
 Computed Bellman-Ford
 Updated routing table
 ---------
-['h1,h1,2', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6']
+['h1,h1,2', 'h2,h1,9', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6', 'r4,r3,11']
 ---------
-['h1,h1,2', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6']
-r1 completed iteration 6 at 2017-04-17 09:15:14.066554
-
-HOST h2
-Copied original routing table
-Starting r4
-Computed r4
-Computed Bellman-Ford
-Updated routing table
----------
-['h2,h2,0', 'r4,r4,2']
----------
-['h2,h2,0', 'r4,r4,2']
-h2 completed iteration 6 at 2017-04-17 09:15:14.160346
-
-HOST r4
-Copied original routing table
-Starting r2
-r2 is not in costs
-r2 is not in costs
-Computed r2
-Starting r3
-Computed r3
-Starting h2
-Computed h2
-Computed Bellman-Ford
-Updated routing table
----------
-['h2,h2,2', 'r3,r3,5', 'r4,r4,0']
----------
-['h2,h2,2', 'r3,r3,5', 'r4,r4,0']
-HOST r2
-Copied original routing table
-Starting r1
-Computed r1
-Starting r4
-r4 is not in costs
-r4 is not in costs
-r4 is not in costs
-Computed r4
-Computed Bellman-Ford
-Updated routing table
----------
-['r1,r1,10', 'r2,r2,0']
----------
-['r1,r1,10', 'r2,r2,0']
-r2 completed iteration 6 at 2017-04-17 09:15:14.163420
+['h1,h1,2', 'h2,h1,9', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6', 'r4,r3,11']
+r1 completed iteration 6 at 2017-04-17 09:18:41.192613
 
 HOST r3
 Copied original routing table
@@ -508,200 +511,8 @@ Computed r4
 Computed Bellman-Ford
 Updated routing table
 ---------
-['r1,r1,6', 'r3,r3,0', 'r4,r4,5']
+['h1,r1,8', 'h2,r4,7', 'r1,r1,6', 'r2,r1,16', 'r3,r3,0', 'r4,r4,5']
 ---------
-['r1,r1,6', 'r3,r3,0', 'r4,r4,5']
-r3 completed iteration 6 at 2017-04-17 09:15:14.164047
-
-r4 completed iteration 6 at 2017-04-17 09:15:14.164298
-
-HOST h1
-Copied original routing table
-Starting r1
-Computed r1
-Computed Bellman-Ford
-Updated routing table
----------
-['h1,h1,0', 'r1,r1,2']
----------
-['h1,h1,0', 'r1,r1,2']
-h1 completed iteration 6 at 2017-04-17 09:15:14.164796
-
-HOST r3
-Copied original routing table
-Starting r1
-Computed r1
-Starting r4
-Computed r4
-Computed Bellman-Ford
-Updated routing table
----------
-['r1,r1,6', 'r3,r3,0', 'r4,r4,5']
----------
-['r1,r1,6', 'r3,r3,0', 'r4,r4,5']
-r3 completed iteration 7 at 2017-04-17 09:15:14.240431
-
-HOST h1
-Copied original routing table
-Starting r1
-Computed r1
-Computed Bellman-Ford
-Updated routing table
----------
-['h1,h1,0', 'r1,r1,2']
----------
-['h1,h1,0', 'r1,r1,2']
-h1 completed iteration 7 at 2017-04-17 09:15:14.334781
-
-HOST r2
-Copied original routing table
-Starting r1
-Computed r1
-Starting r4
-r4 is not in costs
-r4 is not in costs
-r4 is not in costs
-Computed r4
-Computed Bellman-Ford
-Updated routing table
----------
-['r1,r1,10', 'r2,r2,0']
----------
-['r1,r1,10', 'r2,r2,0']
-r2 completed iteration 7 at 2017-04-17 09:15:14.335796
-
-HOST h2
-Copied original routing table
-Starting r4
-Computed r4
-Computed Bellman-Ford
-Updated routing table
----------
-['h2,h2,0', 'r4,r4,2']
----------
-['h2,h2,0', 'r4,r4,2']
-h2 completed iteration 7 at 2017-04-17 09:15:14.336260
-
-HOST r1
-Copied original routing table
-Starting h1
-Computed h1
-Starting r2
-Computed r2
-Starting r3
-Computed r3
-Computed Bellman-Ford
-Updated routing table
----------
-['h1,h1,2', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6']
----------
-['h1,h1,2', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6']
-HOST r4
-Copied original routing table
-Starting r2
-r2 is not in costs
-r2 is not in costs
-Computed r2
-Starting r3
-Computed r3
-Starting h2
-Computed h2
-Computed Bellman-Ford
-Updated routing table
----------
-['h2,h2,2', 'r3,r3,5', 'r4,r4,0']
----------
-['h2,h2,2', 'r3,r3,5', 'r4,r4,0']
-r4 completed iteration 7 at 2017-04-17 09:15:14.338197
-
-r1 completed iteration 7 at 2017-04-17 09:15:14.337797
-
-HOST r4
-Copied original routing table
-Starting r2
-r2 is not in costs
-r2 is not in costs
-Computed r2
-Starting r3
-Computed r3
-Starting h2
-Computed h2
-Computed Bellman-Ford
-Updated routing table
----------
-['h2,h2,2', 'r3,r3,5', 'r4,r4,0']
----------
-['h2,h2,2', 'r3,r3,5', 'r4,r4,0']
-r4 completed iteration 8 at 2017-04-17 09:15:14.413335
-
-HOST r2
-Copied original routing table
-Starting r1
-Computed r1
-Starting r4
-r4 is not in costs
-r4 is not in costs
-r4 is not in costs
-Computed r4
-Computed Bellman-Ford
-Updated routing table
----------
-['r1,r1,10', 'r2,r2,0']
----------
-['r1,r1,10', 'r2,r2,0']
-r2 completed iteration 8 at 2017-04-17 09:15:14.506359
-
-HOST r3
-Copied original routing table
-Starting r1
-Computed r1
-Starting r4
-Computed r4
-Computed Bellman-Ford
-Updated routing table
----------
-['r1,r1,6', 'r3,r3,0', 'r4,r4,5']
----------
-['r1,r1,6', 'r3,r3,0', 'r4,r4,5']
-r3 completed iteration 8 at 2017-04-17 09:15:14.506927
-
-HOST h1
-Copied original routing table
-Starting r1
-Computed r1
-Computed Bellman-Ford
-Updated routing table
----------
-['h1,h1,0', 'r1,r1,2']
----------
-['h1,h1,0', 'r1,r1,2']
-h1 completed iteration 8 at 2017-04-17 09:15:14.507615
-
-HOST h2
-Copied original routing table
-Starting r4
-Computed r4
-Computed Bellman-Ford
-Updated routing table
----------
-['h2,h2,0', 'r4,r4,2']
----------
-['h2,h2,0', 'r4,r4,2']
-h2 completed iteration 8 at 2017-04-17 09:15:14.509484
-
-HOST r1
-Copied original routing table
-Starting h1
-Computed h1
-Starting r2
-Computed r2
-Starting r3
-Computed r3
-Computed Bellman-Ford
-Updated routing table
----------
-['h1,h1,2', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6']
----------
-['h1,h1,2', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6']
-r1 completed iteration 8 at 2017-04-17 09:15:14.514637
+['h1,r1,8', 'h2,r4,7', 'r1,r1,6', 'r2,r1,16', 'r3,r3,0', 'r4,r4,5']
+r3 completed iteration 6 at 2017-04-17 09:18:41.249982
 
