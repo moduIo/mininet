@@ -45,12 +45,19 @@ def compute_tables(tables, routes, neighbors):
     # For all neighbor distance vectors
     for neighbor in neighbors:
         entries = tables[neighbor].split(';')
+
+        log.write('\nStarting ' + neighbor)
 	
         # For each table entry
 	for entry in entries:
 	    field = entry.split(',')
-	    cost = costs[neighbor] + int(field[2])
-	    dest = field[0]
+
+            if not neighbor in costs:
+                continue
+                log.write('\n' + neighbor + ' is not in costs')
+            else:
+	        cost = costs[neighbor] + int(field[2])
+	        dest = field[0]
 
             # Ignore self paths
             if dest == field[1]:
