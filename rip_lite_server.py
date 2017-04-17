@@ -44,16 +44,19 @@ def compute_tables(tables, routes, neighbors):
 	for entry in entries:
 	    field = entry.split(',')
 	    cost = costs[neighbor] + int(field[2])
+	    dest = field[0]
 
-            # If the dest was not already in the DV simply add it
-            if not field[0] in dests:
-                dests[field[0]] = neighbor + ',' + str(cost)
-                costs[field[0]] = cost
+            # Cost >= 1000000 are dead links
+	    if cost < 1000000:
+                # If the dest was not already in the DV simply add it
+                if not dest in dests:
+                    dests[dest] = neighbor + ',' + str(cost)
+                    costs[dest] = cost
 
-            # Otherwise add if new path is shorter
-            elif cost < costs[field[0]]:
-                dests[field[0]] = neighbor + ',' + str(cost)
-                costs[field[0]] = cost
+                # Otherwise add if new path is shorter
+                elif cost < costs[dest]:
+                    dests[dest] = neighbor + ',' + str(cost)
+                    costs[dest] = cost
 
     # Fill in new DV
     for dest in dests:
