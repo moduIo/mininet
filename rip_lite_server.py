@@ -56,7 +56,7 @@ def compute_tables(tables, routes, neighbors):
                 costs[field[0]] = cost
 
     # Fill in new DV
-    for dest in sorted(dests.keys()):
+    for dest in dests:
         updatedRoutes.append(dest + ',' + dests[dest])
 
     return updatedRoutes
@@ -147,9 +147,25 @@ while True:
 
 	# Compute new tables
         newRoutes = compute_tables(tables, routes, neighbors)
+        log = open('log.txt', 'a+')
+        log.write(host + ' completed computing tables...\n')
+        log.write(str(sorted(newRoutes)) + '\n')
+        log.write(str(sorted(routes)) + '\n')
+        log.close()
 
 	# Only pass DV on update
-        if routes == newRoutes:
+        if sorted(routes) == sorted(newRoutes):
+            # Mark update for synchronization
+            done = open('done.txt', 'a+')
+            done.write('x')
+            done.close()
+
+	    # Write to log
+            log = open('log.txt', 'a+')
+            log.write(host + ' completed iteration ' + str(iteration) + ' at time ' + str(datetime.now()) + ' NO UPDATE\n')
+            log.close()
+
+        else:
 	    routes = newRoutes
 
             # Write new table to file
@@ -178,8 +194,3 @@ while True:
 	
             # Run client code to send new tables
             os.system(command)
-        
-        else:
-	# Write to log
-        log = open('log.txt', 'a+')
-        log.write(host + ' completed iteration ' + str(iteration) + ' at time ' + str(datatime.now()) + ' NO UPDATE\n')
