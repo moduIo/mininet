@@ -151,7 +151,7 @@ while True:
 
     # Check which neighbor sent the message
     for neighbor in neighbors:
-        if neighbor in message:
+        if neighbor.upper() in message:
             # Add routing table to dict
 	    tables[neighbor] = message.split(':', 1)[-1]
 

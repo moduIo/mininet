@@ -20,7 +20,7 @@ for neighbor in neighbors:
     s.connect((neighbor, 800)) # IP address is passed in to client
 
     # Formatted table information
-    message = socket.gethostname() + ' :'
+    message = socket.gethostname().upper() + ' :'
 
     for route in routes:
         message += route + ';'

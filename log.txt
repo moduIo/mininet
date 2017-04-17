@@ -15,7 +15,7 @@ Updated routing table
 ['h2,h2,2', 'r2,r2,1000000', 'r3,r3,5']
 ---------
 ['h2,h2,2', 'r1,r3,11', 'r3,r3,5', 'r4,r4,0']
-r4 completed iteration 1 at 2017-04-17 09:28:02.975348
+r4 completed iteration 1 at 2017-04-17 09:32:10.725234
 
 HOST h1
 Copied original routing table
@@ -28,36 +28,7 @@ Updated routing table
 ['r1,r1,2']
 ---------
 ['h1,h1,0', 'r1,r1,2', 'r2,r1,12', 'r3,r1,8']
-h1 completed iteration 1 at 2017-04-17 09:28:02.986938
-
-HOST r3
-Copied original routing table
-Starting r1
-TABLE: r2,r2,10;r3,r3,6;h1,h1,2
-Computed r1
-Starting r4
-TABLE: r2,r2,1000000;r3,r3,5;h2,h2,2
-Computed r4
-Computed Bellman-Ford
-Updated routing table
----------
-['r1,r1,6', 'r4,r4,5']
----------
-['h1,r1,8', 'h2,r4,7', 'r1,r1,6', 'r2,r1,16', 'r3,r3,0', 'r4,r4,5']
-r3 completed iteration 1 at 2017-04-17 09:28:03.040335
-
-HOST h2
-Copied original routing table
-Starting r4
-TABLE: r2,r2,1000000;r3,r3,5;h2,h2,2
-Computed r4
-Computed Bellman-Ford
-Updated routing table
----------
-['r4,r4,2']
----------
-['h2,h2,0', 'r3,r4,7', 'r4,r4,2']
-h2 completed iteration 1 at 2017-04-17 09:28:03.040922
+h1 completed iteration 1 at 2017-04-17 09:32:10.730593
 
 HOST r2
 Copied original routing table
@@ -73,7 +44,36 @@ Updated routing table
 ['r1,r1,10', 'r4,r4,1000000']
 ---------
 ['h1,r1,12', 'r1,r1,10', 'r2,r2,0', 'r3,r1,16']
-r2 completed iteration 1 at 2017-04-17 09:28:03.041353
+r2 completed iteration 1 at 2017-04-17 09:32:10.787278
+
+HOST r3
+Copied original routing table
+Starting r1
+TABLE: r2,r2,10;r3,r3,6;h1,h1,2
+Computed r1
+Starting r4
+TABLE: r2,r2,1000000;r3,r3,5;h2,h2,2
+Computed r4
+Computed Bellman-Ford
+Updated routing table
+---------
+['r1,r1,6', 'r4,r4,5']
+---------
+['h1,r1,8', 'h2,r4,7', 'r1,r1,6', 'r2,r1,16', 'r3,r3,0', 'r4,r4,5']
+r3 completed iteration 1 at 2017-04-17 09:32:10.787757
+
+HOST h2
+Copied original routing table
+Starting r4
+TABLE: r2,r2,1000000;r3,r3,5;h2,h2,2
+Computed r4
+Computed Bellman-Ford
+Updated routing table
+---------
+['r4,r4,2']
+---------
+['h2,h2,0', 'r3,r4,7', 'r4,r4,2']
+h2 completed iteration 1 at 2017-04-17 09:32:10.788158
 
 HOST r1
 Copied original routing table
@@ -92,7 +92,7 @@ Updated routing table
 ['h1,h1,2', 'r2,r2,10', 'r3,r3,6']
 ---------
 ['h1,h1,2', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6', 'r4,r3,11']
-r1 completed iteration 1 at 2017-04-17 09:28:03.056247
+r1 completed iteration 1 at 2017-04-17 09:32:10.806758
 
 HOST r1
 Copied original routing table
@@ -100,59 +100,18 @@ Starting h1
 TABLE: h1,h1,0;r1,r1,2;r2,r1,12;r3,r1,8
 Computed h1
 Starting r2
-TABLE: h1,h1,0;r1,r1,2;r2,r1,12;r3,r1,8
+TABLE: h1,r1,12;r1,r1,10;r2,r2,0;r3,r1,16
 Computed r2
 Starting r3
-TABLE: h1,h1,0;r1,r1,2;r2,r1,12;r3,r1,8
+TABLE: r4,r4,5;r1,r1,6;r2,r1,16;r3,r3,0;h2,r4,7;h1,r1,8
 Computed r3
 Computed Bellman-Ford
 Updated routing table
 ---------
 ['h1,h1,2', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6', 'r4,r3,11']
 ---------
-['h1,h1,2', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6', 'r4,r3,11']
-r1 completed iteration 2 at 2017-04-17 09:28:03.105364
-
-HOST r3
-Copied original routing table
-Starting r1
-TABLE: r4,r4,0;h2,h2,2;r1,r3,11;r3,r3,5
-Computed r1
-Starting r4
-TABLE: r4,r4,0;h2,h2,2;r1,r3,11;r3,r3,5
-Computed r4
-Computed Bellman-Ford
-Updated routing table
----------
-['h1,r1,8', 'h2,r4,7', 'r1,r1,6', 'r2,r1,16', 'r3,r3,0', 'r4,r4,5']
----------
-['h1,r1,8', 'h2,r4,7', 'r1,r1,6', 'r2,r1,16', 'r3,r3,0', 'r4,r4,5']
-r3 completed iteration 2 at 2017-04-17 09:28:03.195328
-
-HOST r4
-Copied original routing table
-Starting r2
-TABLE: r4,r4,5;r1,r1,6;r2,r1,16;r3,r3,0;h2,r4,7;h1,r1,8
-r2 is not in costs
-r2 is not in costs
-r2 is not in costs
-r2 is not in costs
-r2 is not in costs
-r2 is not in costs
-Computed r2
-Starting r3
-TABLE: r4,r4,5;r1,r1,6;r2,r1,16;r3,r3,0;h2,r4,7;h1,r1,8
-Computed r3
-Starting h2
-TABLE: r4,r4,5;r1,r1,6;r2,r1,16;r3,r3,0;h2,r4,7;h1,r1,8
-Computed h2
-Computed Bellman-Ford
-Updated routing table
----------
-['h2,h2,2', 'r1,r3,11', 'r3,r3,5', 'r4,r4,0']
----------
-['h1,h2,10', 'h2,h2,2', 'r1,r3,11', 'r2,h2,18', 'r3,r3,5', 'r4,r4,0']
-r4 completed iteration 2 at 2017-04-17 09:28:03.196806
+['h1,h1,2', 'h2,r3,13', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6', 'r4,r3,11']
+r1 completed iteration 2 at 2017-04-17 09:32:10.859257
 
 HOST h2
 Copied original routing table
@@ -165,27 +124,30 @@ Updated routing table
 ['h2,h2,0', 'r3,r4,7', 'r4,r4,2']
 ---------
 ['h2,h2,0', 'r1,r4,13', 'r3,r4,7', 'r4,r4,2']
-h2 completed iteration 2 at 2017-04-17 09:28:03.199426
+h2 completed iteration 2 at 2017-04-17 09:32:10.946294
 
-HOST r2
+HOST r4
 Copied original routing table
-Starting r1
-TABLE: r4,r4,0;h2,h2,2;r1,r3,11;r3,r3,5
-Computed r1
-Starting r4
-TABLE: r4,r4,0;h2,h2,2;r1,r3,11;r3,r3,5
-r4 is not in costs
-r4 is not in costs
-r4 is not in costs
-r4 is not in costs
-Computed r4
+Starting r2
+TABLE: h1,r1,12;r1,r1,10;r2,r2,0;r3,r1,16
+r2 is not in costs
+r2 is not in costs
+r2 is not in costs
+r2 is not in costs
+Computed r2
+Starting r3
+TABLE: r4,r4,5;r1,r1,6;r2,r1,16;r3,r3,0;h2,r4,7;h1,r1,8
+Computed r3
+Starting h2
+TABLE: h2,h2,0;r4,r4,2;r3,r4,7
+Computed h2
 Computed Bellman-Ford
 Updated routing table
 ---------
-['h1,r1,12', 'r1,r1,10', 'r2,r2,0', 'r3,r1,16']
+['h2,h2,2', 'r1,r3,11', 'r3,r3,5', 'r4,r4,0']
 ---------
-['h1,r1,12', 'r1,r1,10', 'r2,r2,0', 'r3,r1,16']
-r2 completed iteration 2 at 2017-04-17 09:28:03.199917
+['h1,r3,13', 'h2,h2,2', 'r1,r3,11', 'r2,r3,21', 'r3,r3,5', 'r4,r4,0']
+r4 completed iteration 2 at 2017-04-17 09:32:10.950383
 
 HOST h1
 Copied original routing table
@@ -198,55 +160,7 @@ Updated routing table
 ['h1,h1,0', 'r1,r1,2', 'r2,r1,12', 'r3,r1,8']
 ---------
 ['h1,h1,0', 'r1,r1,2', 'r2,r1,12', 'r3,r1,8', 'r4,r1,13']
-h1 completed iteration 2 at 2017-04-17 09:28:03.204760
-
-HOST h1
-Copied original routing table
-Starting r1
-TABLE: r4,r3,11;h1,h1,2;r1,r1,0;r2,r2,10;r3,r3,6
-Computed r1
-Computed Bellman-Ford
-Updated routing table
----------
-['h1,h1,0', 'r1,r1,2', 'r2,r1,12', 'r3,r1,8', 'r4,r1,13']
----------
-['h1,h1,0', 'r1,r1,2', 'r2,r1,12', 'r3,r1,8', 'r4,r1,13']
-h1 completed iteration 3 at 2017-04-17 09:28:03.284400
-
-HOST r1
-Copied original routing table
-Starting h1
-TABLE: r4,r4,5;r1,r1,6;r2,r1,16;r3,r3,0;h2,r4,7;h1,r1,8
-Computed h1
-Starting r2
-TABLE: r4,r4,5;r1,r1,6;r2,r1,16;r3,r3,0;h2,r4,7;h1,r1,8
-Computed r2
-Starting r3
-TABLE: r4,r4,5;r1,r1,6;r2,r1,16;r3,r3,0;h2,r4,7;h1,r1,8
-Computed r3
-Computed Bellman-Ford
-Updated routing table
----------
-['h1,h1,2', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6', 'r4,r3,11']
----------
-['h1,h1,2', 'h2,h1,9', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6', 'r4,r3,11']
-r1 completed iteration 3 at 2017-04-17 09:28:03.324169
-
-HOST r3
-Copied original routing table
-Starting r1
-TABLE: r4,r3,11;h1,h1,2;r1,r1,0;r2,r2,10;r3,r3,6
-Computed r1
-Starting r4
-TABLE: r4,r3,11;h1,h1,2;r1,r1,0;r2,r2,10;r3,r3,6
-Computed r4
-Computed Bellman-Ford
-Updated routing table
----------
-['h1,r1,8', 'h2,r4,7', 'r1,r1,6', 'r2,r1,16', 'r3,r3,0', 'r4,r4,5']
----------
-['h1,r1,8', 'h2,r4,7', 'r1,r1,6', 'r2,r1,16', 'r3,r3,0', 'r4,r4,5']
-r3 completed iteration 3 at 2017-04-17 09:28:03.372695
+h1 completed iteration 2 at 2017-04-17 09:32:10.957152
 
 HOST r2
 Copied original routing table
@@ -254,7 +168,7 @@ Starting r1
 TABLE: r4,r3,11;h1,h1,2;r1,r1,0;r2,r2,10;r3,r3,6
 Computed r1
 Starting r4
-TABLE: r4,r3,11;h1,h1,2;r1,r1,0;r2,r2,10;r3,r3,6
+TABLE: r4,r4,0;h2,h2,2;r1,r3,11;r3,r3,5
 Computed r4
 Computed Bellman-Ford
 Updated routing table
@@ -262,204 +176,205 @@ Updated routing table
 ['h1,r1,12', 'r1,r1,10', 'r2,r2,0', 'r3,r1,16']
 ---------
 ['h1,r1,12', 'r1,r1,10', 'r2,r2,0', 'r3,r1,16', 'r4,r1,21']
-r2 completed iteration 3 at 2017-04-17 09:28:03.376417
+r2 completed iteration 2 at 2017-04-17 09:32:10.957646
 
-HOST r4
+HOST r3
 Copied original routing table
-Starting r2
-TABLE: h1,r1,12;r1,r1,10;r2,r2,0;r3,r1,16
-Computed r2
-Starting r3
-TABLE: h2,h2,0;r4,r4,2;r1,r4,13;r3,r4,7
-Computed r3
-Starting h2
-TABLE: h2,h2,0;r4,r4,2;r1,r4,13;r3,r4,7
-Computed h2
+Starting r1
+TABLE: r4,r3,11;h1,h1,2;r1,r1,0;r2,r2,10;r3,r3,6
+Computed r1
+Starting r4
+TABLE: r4,r4,0;h2,h2,2;r1,r3,11;r3,r3,5
+Computed r4
 Computed Bellman-Ford
 Updated routing table
 ---------
-['h1,h2,10', 'h2,h2,2', 'r1,r3,11', 'r2,h2,18', 'r3,r3,5', 'r4,r4,0']
+['h1,r1,8', 'h2,r4,7', 'r1,r1,6', 'r2,r1,16', 'r3,r3,0', 'r4,r4,5']
 ---------
-['h1,h2,10', 'h2,h2,2', 'r1,r3,11', 'r2,h2,18', 'r3,r3,5', 'r4,r4,0']
-r4 completed iteration 3 at 2017-04-17 09:28:03.380777
+['h1,r1,8', 'h2,r4,7', 'r1,r1,6', 'r2,r1,16', 'r3,r3,0', 'r4,r4,5']
+r3 completed iteration 2 at 2017-04-17 09:32:10.958168
+
+HOST r3
+Copied original routing table
+Starting r1
+TABLE: r4,r3,11;r1,r1,0;r2,r2,10;r3,r3,6;h2,r3,13;h1,h1,2
+Computed r1
+Starting r4
+TABLE: r4,r4,0;r1,r3,11;r2,r3,21;r3,r3,5;h2,h2,2;h1,r3,13
+Computed r4
+Computed Bellman-Ford
+Updated routing table
+---------
+['h1,r1,8', 'h2,r4,7', 'r1,r1,6', 'r2,r1,16', 'r3,r3,0', 'r4,r4,5']
+---------
+['h1,r1,8', 'h2,r4,7', 'r1,r1,6', 'r2,r1,16', 'r3,r3,0', 'r4,r4,5']
+r3 completed iteration 3 at 2017-04-17 09:32:11.033170
 
 HOST h2
 Copied original routing table
 Starting r4
-TABLE: r4,r4,0;r1,r3,11;r2,h2,18;r3,r3,5;h2,h2,2;h1,h2,10
+TABLE: r4,r4,0;r1,r3,11;r2,r3,21;r3,r3,5;h2,h2,2;h1,r3,13
 Computed r4
 Computed Bellman-Ford
 Updated routing table
 ---------
 ['h2,h2,0', 'r1,r4,13', 'r3,r4,7', 'r4,r4,2']
 ---------
-['h1,r4,12', 'h2,h2,0', 'r1,r4,13', 'r2,r4,20', 'r3,r4,7', 'r4,r4,2']
-h2 completed iteration 3 at 2017-04-17 09:28:03.386489
+['h1,r4,15', 'h2,h2,0', 'r1,r4,13', 'r2,r4,23', 'r3,r4,7', 'r4,r4,2']
+h2 completed iteration 3 at 2017-04-17 09:32:11.119890
 
 HOST r2
 Copied original routing table
 Starting r1
-TABLE: r4,r3,11;h1,h1,2;r1,r1,0;r2,r2,10;r3,r3,6
+TABLE: r4,r3,11;r1,r1,0;r2,r2,10;r3,r3,6;h2,r3,13;h1,h1,2
 Computed r1
 Starting r4
-TABLE: r4,r3,11;h1,h1,2;r1,r1,0;r2,r2,10;r3,r3,6
+TABLE: r4,r4,0;r1,r3,11;r2,r3,21;r3,r3,5;h2,h2,2;h1,r3,13
 Computed r4
 Computed Bellman-Ford
 Updated routing table
 ---------
 ['h1,r1,12', 'r1,r1,10', 'r2,r2,0', 'r3,r1,16', 'r4,r1,21']
 ---------
-['h1,r1,12', 'r1,r1,10', 'r2,r2,0', 'r3,r1,16', 'r4,r1,21']
-r2 completed iteration 4 at 2017-04-17 09:28:03.440484
+['h1,r1,12', 'h2,r1,23', 'r1,r1,10', 'r2,r2,0', 'r3,r1,16', 'r4,r1,21']
+r2 completed iteration 3 at 2017-04-17 09:32:11.124556
 
 HOST h1
 Copied original routing table
 Starting r1
-TABLE: r4,r3,11;r1,r1,0;r2,r2,10;r3,r3,6;h2,h1,9;h1,h1,2
+TABLE: r4,r3,11;r1,r1,0;r2,r2,10;r3,r3,6;h2,r3,13;h1,h1,2
 Computed r1
 Computed Bellman-Ford
 Updated routing table
 ---------
 ['h1,h1,0', 'r1,r1,2', 'r2,r1,12', 'r3,r1,8', 'r4,r1,13']
 ---------
-['h1,h1,0', 'h2,r1,11', 'r1,r1,2', 'r2,r1,12', 'r3,r1,8', 'r4,r1,13']
-h1 completed iteration 4 at 2017-04-17 09:28:03.440953
+['h1,h1,0', 'h2,r1,15', 'r1,r1,2', 'r2,r1,12', 'r3,r1,8', 'r4,r1,13']
+h1 completed iteration 3 at 2017-04-17 09:32:11.128958
 
 HOST r1
 Copied original routing table
 Starting h1
-TABLE: h1,r1,12;r1,r1,10;r2,r2,0;r3,r1,16
+TABLE: r4,r1,13;h1,h1,0;r1,r1,2;r2,r1,12;r3,r1,8
 Computed h1
 Starting r2
-TABLE: h1,r1,12;r1,r1,10;r2,r2,0;r3,r1,16
+TABLE: r4,r1,21;h1,r1,12;r1,r1,10;r2,r2,0;r3,r1,16
 Computed r2
 Starting r3
-TABLE: h1,r1,12;r1,r1,10;r2,r2,0;r3,r1,16
+TABLE: r4,r4,5;r1,r1,6;r2,r1,16;r3,r3,0;h2,r4,7;h1,r1,8
 Computed r3
 Computed Bellman-Ford
 Updated routing table
 ---------
-['h1,h1,2', 'h2,h1,9', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6', 'r4,r3,11']
+['h1,h1,2', 'h2,r3,13', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6', 'r4,r3,11']
 ---------
-['h1,h1,2', 'h2,h1,9', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6', 'r4,r3,11']
-r1 completed iteration 4 at 2017-04-17 09:28:03.445448
-
-HOST r3
-Copied original routing table
-Starting r1
-TABLE: r4,r3,11;h1,h1,2;r1,r1,0;r2,r2,10;r3,r3,6
-Computed r1
-Starting r4
-TABLE: r4,r3,11;h1,h1,2;r1,r1,0;r2,r2,10;r3,r3,6
-Computed r4
-Computed Bellman-Ford
-Updated routing table
----------
-['h1,r1,8', 'h2,r4,7', 'r1,r1,6', 'r2,r1,16', 'r3,r3,0', 'r4,r4,5']
----------
-['h1,r1,8', 'h2,r4,7', 'r1,r1,6', 'r2,r1,16', 'r3,r3,0', 'r4,r4,5']
-r3 completed iteration 4 at 2017-04-17 09:28:03.522654
+['h1,h1,2', 'h2,r3,13', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6', 'r4,r3,11']
+r1 completed iteration 3 at 2017-04-17 09:32:11.130295
 
 HOST r4
 Copied original routing table
 Starting r2
-TABLE: r4,r4,5;r1,r1,6;r2,r1,16;r3,r3,0;h2,r4,7;h1,r1,8
+TABLE: r4,r1,21;h1,r1,12;r1,r1,10;r2,r2,0;r3,r1,16
 Computed r2
 Starting r3
 TABLE: r4,r4,5;r1,r1,6;r2,r1,16;r3,r3,0;h2,r4,7;h1,r1,8
 Computed r3
 Starting h2
-TABLE: r4,r4,5;r1,r1,6;r2,r1,16;r3,r3,0;h2,r4,7;h1,r1,8
+TABLE: h2,h2,0;r4,r4,2;r1,r4,13;r3,r4,7
 Computed h2
 Computed Bellman-Ford
 Updated routing table
 ---------
-['h1,h2,10', 'h2,h2,2', 'r1,r3,11', 'r2,h2,18', 'r3,r3,5', 'r4,r4,0']
+['h1,r3,13', 'h2,h2,2', 'r1,r3,11', 'r2,r3,21', 'r3,r3,5', 'r4,r4,0']
 ---------
-['h1,h2,10', 'h2,h2,2', 'r1,r3,11', 'r2,h2,18', 'r3,r3,5', 'r4,r4,0']
-r4 completed iteration 4 at 2017-04-17 09:28:03.538708
+['h1,r3,13', 'h2,h2,2', 'r1,r3,11', 'r2,r3,21', 'r3,r3,5', 'r4,r4,0']
+r4 completed iteration 3 at 2017-04-17 09:32:11.130847
+
+HOST r1
+Copied original routing table
+Starting h1
+TABLE: r4,r1,13;r1,r1,2;r2,r1,12;r3,r1,8;h2,r1,15;h1,h1,0
+Computed h1
+Starting r2
+TABLE: r4,r1,21;r1,r1,10;r2,r2,0;r3,r1,16;h2,r1,23;h1,r1,12
+Computed r2
+Starting r3
+TABLE: r4,r4,5;r1,r1,6;r2,r1,16;r3,r3,0;h2,r4,7;h1,r1,8
+Computed r3
+Computed Bellman-Ford
+Updated routing table
+---------
+['h1,h1,2', 'h2,r3,13', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6', 'r4,r3,11']
+---------
+['h1,h1,2', 'h2,r3,13', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6', 'r4,r3,11']
+r1 completed iteration 4 at 2017-04-17 09:32:11.203872
 
 HOST h2
 Copied original routing table
 Starting r4
-TABLE: r4,r4,0;r1,r3,11;r2,h2,18;r3,r3,5;h2,h2,2;h1,h2,10
+TABLE: r4,r4,0;r1,r3,11;r2,r3,21;r3,r3,5;h2,h2,2;h1,r3,13
 Computed r4
 Computed Bellman-Ford
 Updated routing table
 ---------
-['h1,r4,12', 'h2,h2,0', 'r1,r4,13', 'r2,r4,20', 'r3,r4,7', 'r4,r4,2']
+['h1,r4,15', 'h2,h2,0', 'r1,r4,13', 'r2,r4,23', 'r3,r4,7', 'r4,r4,2']
 ---------
-['h1,r4,12', 'h2,h2,0', 'r1,r4,13', 'r2,r4,20', 'r3,r4,7', 'r4,r4,2']
-h2 completed iteration 4 at 2017-04-17 09:28:03.540401
+['h1,r4,15', 'h2,h2,0', 'r1,r4,13', 'r2,r4,23', 'r3,r4,7', 'r4,r4,2']
+h2 completed iteration 4 at 2017-04-17 09:32:11.295945
 
-HOST h2
+HOST r4
 Copied original routing table
-Starting r4
-TABLE: r4,r4,0;r1,r3,11;r2,h2,18;r3,r3,5;h2,h2,2;h1,h2,10
-Computed r4
+Starting r2
+TABLE: r4,r1,21;r1,r1,10;r2,r2,0;r3,r1,16;h2,r1,23;h1,r1,12
+Computed r2
+Starting r3
+TABLE: r4,r4,5;r1,r1,6;r2,r1,16;r3,r3,0;h2,r4,7;h1,r1,8
+Computed r3
+Starting h2
+TABLE: r4,r4,2;r1,r4,13;r2,r4,23;r3,r4,7;h2,h2,0;h1,r4,15
+Computed h2
 Computed Bellman-Ford
 Updated routing table
 ---------
-['h1,r4,12', 'h2,h2,0', 'r1,r4,13', 'r2,r4,20', 'r3,r4,7', 'r4,r4,2']
+['h1,r3,13', 'h2,h2,2', 'r1,r3,11', 'r2,r3,21', 'r3,r3,5', 'r4,r4,0']
 ---------
-['h1,r4,12', 'h2,h2,0', 'r1,r4,13', 'r2,r4,20', 'r3,r4,7', 'r4,r4,2']
-h2 completed iteration 5 at 2017-04-17 09:28:03.568603
-
-HOST r2
-Copied original routing table
-Starting r1
-TABLE: r4,r4,0;r1,r3,11;r2,h2,18;r3,r3,5;h2,h2,2;h1,h2,10
-Computed r1
-Starting r4
-TABLE: r4,r4,0;r1,r3,11;r2,h2,18;r3,r3,5;h2,h2,2;h1,h2,10
-Computed r4
-Computed Bellman-Ford
-Updated routing table
----------
-['h1,r1,12', 'r1,r1,10', 'r2,r2,0', 'r3,r1,16', 'r4,r1,21']
----------
-['h1,r1,12', 'r1,r1,10', 'r2,r2,0', 'r3,r1,16', 'r4,r1,21']
-r2 completed iteration 5 at 2017-04-17 09:28:03.582986
+['h1,r3,13', 'h2,h2,2', 'r1,r3,11', 'r2,r3,21', 'r3,r3,5', 'r4,r4,0']
+r4 completed iteration 4 at 2017-04-17 09:32:11.297390
 
 HOST h1
 Copied original routing table
 Starting r1
-TABLE: r4,r3,11;r1,r1,0;r2,r2,10;r3,r3,6;h2,h1,9;h1,h1,2
+TABLE: r4,r3,11;r1,r1,0;r2,r2,10;r3,r3,6;h2,r3,13;h1,h1,2
 Computed r1
 Computed Bellman-Ford
 Updated routing table
 ---------
-['h1,h1,0', 'h2,r1,11', 'r1,r1,2', 'r2,r1,12', 'r3,r1,8', 'r4,r1,13']
+['h1,h1,0', 'h2,r1,15', 'r1,r1,2', 'r2,r1,12', 'r3,r1,8', 'r4,r1,13']
 ---------
-['h1,h1,0', 'h2,r1,11', 'r1,r1,2', 'r2,r1,12', 'r3,r1,8', 'r4,r1,13']
-h1 completed iteration 5 at 2017-04-17 09:28:03.589306
-
-HOST r1
+['h1,h1,0', 'h2,r1,15', 'r1,r1,2', 'r2,r1,12', 'r3,r1,8', 'r4,r1,13']
+HOST r2
 Copied original routing table
-Starting h1
-TABLE: r4,r4,5;r1,r1,6;r2,r1,16;r3,r3,0;h2,r4,7;h1,r1,8
-Computed h1
-Starting r2
-TABLE: r4,r4,5;r1,r1,6;r2,r1,16;r3,r3,0;h2,r4,7;h1,r1,8
-Computed r2
-Starting r3
-TABLE: r4,r4,5;r1,r1,6;r2,r1,16;r3,r3,0;h2,r4,7;h1,r1,8
-Computed r3
+Starting r1
+TABLE: r4,r3,11;r1,r1,0;r2,r2,10;r3,r3,6;h2,r3,13;h1,h1,2
+Computed r1
+Starting r4
+TABLE: r4,r4,0;r1,r3,11;r2,r3,21;r3,r3,5;h2,h2,2;h1,r3,13
+Computed r4
 Computed Bellman-Ford
 Updated routing table
 ---------
-['h1,h1,2', 'h2,h1,9', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6', 'r4,r3,11']
+['h1,r1,12', 'h2,r1,23', 'r1,r1,10', 'r2,r2,0', 'r3,r1,16', 'r4,r1,21']
 ---------
-['h1,h1,2', 'h2,h1,9', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6', 'r4,r3,11']
-r1 completed iteration 5 at 2017-04-17 09:28:03.590093
+['h1,r1,12', 'h2,r1,23', 'r1,r1,10', 'r2,r2,0', 'r3,r1,16', 'r4,r1,21']
+r2 completed iteration 4 at 2017-04-17 09:32:11.302368
 
 HOST r3
 Copied original routing table
 Starting r1
-TABLE: r4,r4,0;r1,r3,11;r2,h2,18;r3,r3,5;h2,h2,2;h1,h2,10
+TABLE: r4,r3,11;r1,r1,0;r2,r2,10;r3,r3,6;h2,r3,13;h1,h1,2
 Computed r1
 Starting r4
-TABLE: r4,r4,0;r1,r3,11;r2,h2,18;r3,r3,5;h2,h2,2;h1,h2,10
+TABLE: r4,r4,0;r1,r3,11;r2,r3,21;r3,r3,5;h2,h2,2;h1,r3,13
 Computed r4
 Computed Bellman-Ford
 Updated routing table
@@ -467,24 +382,596 @@ Updated routing table
 ['h1,r1,8', 'h2,r4,7', 'r1,r1,6', 'r2,r1,16', 'r3,r3,0', 'r4,r4,5']
 ---------
 ['h1,r1,8', 'h2,r4,7', 'r1,r1,6', 'r2,r1,16', 'r3,r3,0', 'r4,r4,5']
-r3 completed iteration 5 at 2017-04-17 09:28:03.640488
+r3 completed iteration 4 at 2017-04-17 09:32:11.302939
 
+h1 completed iteration 4 at 2017-04-17 09:32:11.301905
+
+HOST r2
+Copied original routing table
+Starting r1
+TABLE: r4,r3,11;r1,r1,0;r2,r2,10;r3,r3,6;h2,r3,13;h1,h1,2
+Computed r1
+Starting r4
+TABLE: r4,r4,0;r1,r3,11;r2,r3,21;r3,r3,5;h2,h2,2;h1,r3,13
+Computed r4
+Computed Bellman-Ford
+Updated routing table
+---------
+['h1,r1,12', 'h2,r1,23', 'r1,r1,10', 'r2,r2,0', 'r3,r1,16', 'r4,r1,21']
+---------
+['h1,r1,12', 'h2,r1,23', 'r1,r1,10', 'r2,r2,0', 'r3,r1,16', 'r4,r1,21']
+r2 completed iteration 5 at 2017-04-17 09:32:11.379537
+
+HOST h2
+Copied original routing table
+Starting r4
+TABLE: r4,r4,0;r1,r3,11;r2,r3,21;r3,r3,5;h2,h2,2;h1,r3,13
+Computed r4
+Computed Bellman-Ford
+Updated routing tableHOST h1
+Copied original routing table
+Starting r1
+TABLE: r4,r3,11;r1,r1,0;r2,r2,10;r3,r3,6;h2,r3,13;h1,h1,2
+Computed r1
+Computed Bellman-Ford
+Updated routing table
+---------
+['h1,h1,0', 'h2,r1,15', 'r1,r1,2', 'r2,r1,12', 'r3,r1,8', 'r4,r1,13']
+---------
+['h1,h1,0', 'h2,r1,15', 'r1,r1,2', 'r2,r1,12', 'r3,r1,8', 'r4,r1,13']
+h1 completed iteration 5 at 2017-04-17 09:32:11.474402
+
+
+---------
+['h1,r4,15', 'h2,h2,0', 'r1,r4,13', 'r2,r4,23', 'r3,r4,7', 'r4,r4,2']
+---------
+['h1,r4,15', 'h2,h2,0', 'r1,r4,13', 'r2,r4,23', 'r3,r4,7', 'r4,r4,2']
+h2 completed iteration 5 at 2017-04-17 09:32:11.474724
+
+HOST r3
+Copied original routing table
+Starting r1
+TABLE: r4,r3,11;r1,r1,0;r2,r2,10;r3,r3,6;h2,r3,13;h1,h1,2
+Computed r1
+Starting r4
+TABLE: r4,r4,0;r1,r3,11;r2,r3,21;r3,r3,5;h2,h2,2;h1,r3,13
+Computed r4
+Computed Bellman-Ford
+Updated routing table
+---------
+['h1,r1,8', 'h2,r4,7', 'r1,r1,6', 'r2,r1,16', 'r3,r3,0', 'r4,r4,5']
+---------
+['h1,r1,8', 'h2,r4,7', 'r1,r1,6', 'r2,r1,16', 'r3,r3,0', 'r4,r4,5']
+r3 completed iteration 5 at 2017-04-17 09:32:11.476505
+
+HOST r1
+Copied original routing table
+Starting h1
+TABLE: r4,r1,13;r1,r1,2;r2,r1,12;r3,r1,8;h2,r1,15;h1,h1,0
+Computed h1
+Starting r2
+TABLE: r4,r1,21;r1,r1,10;r2,r2,0;r3,r1,16;h2,r1,23;h1,r1,12
+Computed r2
+Starting r3
+TABLE: r4,r4,5;r1,r1,6;r2,r1,16;r3,r3,0;h2,r4,7;h1,r1,8
+Computed r3
+Computed Bellman-Ford
+Updated routing table
+---------
+['h1,h1,2', 'h2,r3,13', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6', 'r4,r3,11']
+---------
+['h1,h1,2', 'h2,r3,13', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6', 'r4,r3,11']
 HOST r4
 Copied original routing table
 Starting r2
-TABLE: r4,r4,5;r1,r1,6;r2,r1,16;r3,r3,0;h2,r4,7;h1,r1,8
+TABLE: r4,r1,21;r1,r1,10;r2,r2,0;r3,r1,16;h2,r1,23;h1,r1,12
 Computed r2
 Starting r3
 TABLE: r4,r4,5;r1,r1,6;r2,r1,16;r3,r3,0;h2,r4,7;h1,r1,8
 Computed r3
 Starting h2
-TABLE: r4,r4,5;r1,r1,6;r2,r1,16;r3,r3,0;h2,r4,7;h1,r1,8
+TABLE: r4,r4,2;r1,r4,13;r2,r4,23;r3,r4,7;h2,h2,0;h1,r4,15
 Computed h2
 Computed Bellman-Ford
 Updated routing table
 ---------
-['h1,h2,10', 'h2,h2,2', 'r1,r3,11', 'r2,h2,18', 'r3,r3,5', 'r4,r4,0']
+['h1,r3,13', 'h2,h2,2', 'r1,r3,11', 'r2,r3,21', 'r3,r3,5', 'r4,r4,0']
 ---------
-['h1,h2,10', 'h2,h2,2', 'r1,r3,11', 'r2,h2,18', 'r3,r3,5', 'r4,r4,0']
-r4 completed iteration 5 at 2017-04-17 09:28:03.666334
+['h1,r3,13', 'h2,h2,2', 'r1,r3,11', 'r2,r3,21', 'r3,r3,5', 'r4,r4,0']
+r4 completed iteration 5 at 2017-04-17 09:32:11.478279
+
+r1 completed iteration 5 at 2017-04-17 09:32:11.477818
+
+HOST r4
+Copied original routing table
+Starting r2
+TABLE: r4,r1,21;r1,r1,10;r2,r2,0;r3,r1,16;h2,r1,23;h1,r1,12
+Computed r2
+Starting r3
+TABLE: r4,r4,5;r1,r1,6;r2,r1,16;r3,r3,0;h2,r4,7;h1,r1,8
+Computed r3
+Starting h2
+TABLE: r4,r4,2;r1,r4,13;r2,r4,23;r3,r4,7;h2,h2,0;h1,r4,15
+Computed h2
+Computed Bellman-Ford
+Updated routing table
+---------
+['h1,r3,13', 'h2,h2,2', 'r1,r3,11', 'r2,r3,21', 'r3,r3,5', 'r4,r4,0']
+---------
+['h1,r3,13', 'h2,h2,2', 'r1,r3,11', 'r2,r3,21', 'r3,r3,5', 'r4,r4,0']
+r4 completed iteration 6 at 2017-04-17 09:32:11.561292
+
+HOST h1
+Copied original routing table
+Starting r1
+TABLE: r4,r3,11;r1,r1,0;r2,r2,10;r3,r3,6;h2,r3,13;h1,h1,2
+Computed r1
+Computed Bellman-Ford
+Updated routing table
+---------
+['h1,h1,0', 'h2,r1,15', 'r1,r1,2', 'r2,r1,12', 'r3,r1,8', 'r4,r1,13']
+---------
+['h1,h1,0', 'h2,r1,15', 'r1,r1,2', 'r2,r1,12', 'r3,r1,8', 'r4,r1,13']
+h1 completed iteration 6 at 2017-04-17 09:32:11.654763
+
+HOST r2
+Copied original routing table
+Starting r1
+TABLE: r4,r3,11;r1,r1,0;r2,r2,10;r3,r3,6;h2,r3,13;h1,h1,2
+Computed r1
+Starting r4
+TABLE: r4,r4,0;r1,r3,11;r2,r3,21;r3,r3,5;h2,h2,2;h1,r3,13
+Computed r4
+Computed Bellman-Ford
+Updated routing table
+---------
+['h1,r1,12', 'h2,r1,23', 'r1,r1,10', 'r2,r2,0', 'r3,r1,16', 'r4,r1,21']
+---------
+['h1,r1,12', 'h2,r1,23', 'r1,r1,10', 'r2,r2,0', 'r3,r1,16', 'r4,r1,21']
+r2 completed iteration 6 at 2017-04-17 09:32:11.656859
+
+HOST h2
+Copied original routing table
+Starting r4
+TABLE: r4,r4,0;r1,r3,11;r2,r3,21;r3,r3,5;h2,h2,2;h1,r3,13
+Computed r4
+Computed Bellman-Ford
+Updated routing table
+---------
+['h1,r4,15', 'h2,h2,0', 'r1,r4,13', 'r2,r4,23', 'r3,r4,7', 'r4,r4,2']
+---------
+['h1,r4,15', 'h2,h2,0', 'r1,r4,13', 'r2,r4,23', 'r3,r4,7', 'r4,r4,2']
+h2 completed iteration 6 at 2017-04-17 09:32:11.657376
+
+HOST r1
+Copied original routing table
+Starting h1
+TABLE: r4,r1,13;r1,r1,2;r2,r1,12;r3,r1,8;h2,r1,15;h1,h1,0
+Computed h1
+Starting r2
+TABLE: r4,r1,21;r1,r1,10;r2,r2,0;r3,r1,16;h2,r1,23;h1,r1,12
+Computed r2
+Starting r3
+TABLE: r4,r4,5;r1,r1,6;r2,r1,16;r3,r3,0;h2,r4,7;h1,r1,8
+Computed r3
+Computed Bellman-Ford
+Updated routing table
+---------
+['h1,h1,2', 'h2,r3,13', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6', 'r4,r3,11']
+---------
+['h1,h1,2', 'h2,r3,13', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6', 'r4,r3,11']
+r1 completed iteration 6 at 2017-04-17 09:32:11.660503
+
+HOST r3
+Copied original routing table
+Starting r1
+TABLE: r4,r3,11;r1,r1,0;r2,r2,10;r3,r3,6;h2,r3,13;h1,h1,2
+Computed r1
+Starting r4
+TABLE: r4,r4,0;r1,r3,11;r2,r3,21;r3,r3,5;h2,h2,2;h1,r3,13
+Computed r4
+Computed Bellman-Ford
+Updated routing table
+---------
+['h1,r1,8', 'h2,r4,7', 'r1,r1,6', 'r2,r1,16', 'r3,r3,0', 'r4,r4,5']
+---------
+['h1,r1,8', 'h2,r4,7', 'r1,r1,6', 'r2,r1,16', 'r3,r3,0', 'r4,r4,5']
+r3 completed iteration 6 at 2017-04-17 09:32:11.661454
+
+HOST r2
+Copied original routing table
+Starting r1
+TABLE: r4,r3,11;r1,r1,0;r2,r2,10;r3,r3,6;h2,r3,13;h1,h1,2
+Computed r1
+Starting r4
+TABLE: r4,r4,0;r1,r3,11;r2,r3,21;r3,r3,5;h2,h2,2;h1,r3,13
+Computed r4
+Computed Bellman-Ford
+Updated routing table
+---------
+['h1,r1,12', 'h2,r1,23', 'r1,r1,10', 'r2,r2,0', 'r3,r1,16', 'r4,r1,21']
+---------
+['h1,r1,12', 'h2,r1,23', 'r1,r1,10', 'r2,r2,0', 'r3,r1,16', 'r4,r1,21']
+r2 completed iteration 7 at 2017-04-17 09:32:11.739672
+
+HOST r3
+Copied original routing table
+Starting r1
+TABLE: r4,r3,11;r1,r1,0;r2,r2,10;r3,r3,6;h2,r3,13;h1,h1,2
+Computed r1
+Starting r4
+TABLE: r4,r4,0;r1,r3,11;r2,r3,21;r3,r3,5;h2,h2,2;h1,r3,13
+Computed r4
+Computed Bellman-Ford
+Updated routing table
+---------
+['h1,r1,8', 'h2,r4,7', 'r1,r1,6', 'r2,r1,16', 'r3,r3,0', 'r4,r4,5']
+---------
+['h1,r1,8', 'h2,r4,7', 'r1,r1,6', 'r2,r1,16', 'r3,r3,0', 'r4,r4,5']
+r3 completed iteration 7 at 2017-04-17 09:32:11.833253
+
+HOST h1
+Copied original routing table
+Starting r1
+TABLE: r4,r3,11;r1,r1,0;r2,r2,10;r3,r3,6;h2,r3,13;h1,h1,2
+Computed r1
+Computed Bellman-Ford
+Updated routing table
+---------
+['h1,h1,0', 'h2,r1,15', 'r1,r1,2', 'r2,r1,12', 'r3,r1,8', 'r4,r1,13']
+---------
+['h1,h1,0', 'h2,r1,15', 'r1,r1,2', 'r2,r1,12', 'r3,r1,8', 'r4,r1,13']
+h1 completed iteration 7 at 2017-04-17 09:32:11.833812
+
+HOST h2
+Copied original routing table
+Starting r4
+TABLE: r4,r4,0;r1,r3,11;r2,r3,21;r3,r3,5;h2,h2,2;h1,r3,13
+Computed r4
+Computed Bellman-Ford
+Updated routing table
+---------
+['h1,r4,15', 'h2,h2,0', 'r1,r4,13', 'r2,r4,23', 'r3,r4,7', 'r4,r4,2']
+---------
+['h1,r4,15', 'h2,h2,0', 'r1,r4,13', 'r2,r4,23', 'r3,r4,7', 'r4,r4,2']
+h2 completed iteration 7 at 2017-04-17 09:32:11.837003
+
+HOST r1
+Copied original routing table
+Starting h1
+TABLE: r4,r1,13;r1,r1,2;r2,r1,12;r3,r1,8;h2,r1,15;h1,h1,0
+Computed h1
+Starting r2
+TABLE: r4,r1,21;r1,r1,10;r2,r2,0;r3,r1,16;h2,r1,23;h1,r1,12
+Computed r2
+Starting r3
+TABLE: r4,r4,5;r1,r1,6;r2,r1,16;r3,r3,0;h2,r4,7;h1,r1,8
+Computed r3
+Computed Bellman-Ford
+Updated routing table
+---------
+['h1,h1,2', 'h2,r3,13', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6', 'r4,r3,11']
+---------
+['h1,h1,2', 'h2,r3,13', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6', 'r4,r3,11']
+HOST r4
+Copied original routing table
+Starting r2
+TABLE: r4,r1,21;r1,r1,10;r2,r2,0;r3,r1,16;h2,r1,23;h1,r1,12
+Computed r2
+Starting r3
+TABLE: r4,r4,5;r1,r1,6;r2,r1,16;r3,r3,0;h2,r4,7;h1,r1,8
+Computed r3
+Starting h2
+TABLE: r4,r4,2;r1,r4,13;r2,r4,23;r3,r4,7;h2,h2,0;h1,r4,15
+Computed h2
+Computed Bellman-Ford
+Updated routing table
+---------
+['h1,r3,13', 'h2,h2,2', 'r1,r3,11', 'r2,r3,21', 'r3,r3,5', 'r4,r4,0']
+---------
+['h1,r3,13', 'h2,h2,2', 'r1,r3,11', 'r2,r3,21', 'r3,r3,5', 'r4,r4,0']
+r4 completed iteration 7 at 2017-04-17 09:32:11.838400
+
+r1 completed iteration 7 at 2017-04-17 09:32:11.837953
+
+HOST r1
+Copied original routing table
+Starting h1
+TABLE: r4,r1,13;r1,r1,2;r2,r1,12;r3,r1,8;h2,r1,15;h1,h1,0
+Computed h1
+Starting r2
+TABLE: r4,r1,21;r1,r1,10;r2,r2,0;r3,r1,16;h2,r1,23;h1,r1,12
+Computed r2
+Starting r3
+TABLE: r4,r4,5;r1,r1,6;r2,r1,16;r3,r3,0;h2,r4,7;h1,r1,8
+Computed r3
+Computed Bellman-Ford
+Updated routing table
+---------
+['h1,h1,2', 'h2,r3,13', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6', 'r4,r3,11']
+---------
+['h1,h1,2', 'h2,r3,13', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6', 'r4,r3,11']
+r1 completed iteration 8 at 2017-04-17 09:32:11.916128
+
+HOST h1
+Copied original routing table
+Starting r1
+TABLE: r4,r3,11;r1,r1,0;r2,r2,10;r3,r3,6;h2,r3,13;h1,h1,2
+Computed r1
+Computed Bellman-Ford
+Updated routing table
+---------
+['h1,h1,0', 'h2,r1,15', 'r1,r1,2', 'r2,r1,12', 'r3,r1,8', 'r4,r1,13']
+---------
+['h1,h1,0', 'h2,r1,15', 'r1,r1,2', 'r2,r1,12', 'r3,r1,8', 'r4,r1,13']
+h1 completed iteration 8 at 2017-04-17 09:32:12.009010
+
+HOST r2
+Copied original routing table
+Starting r1
+TABLE: r4,r3,11;r1,r1,0;r2,r2,10;r3,r3,6;h2,r3,13;h1,h1,2
+Computed r1
+Starting r4
+TABLE: r4,r4,0;r1,r3,11;r2,r3,21;r3,r3,5;h2,h2,2;h1,r3,13
+Computed r4
+Computed Bellman-Ford
+Updated routing table
+---------
+['h1,r1,12', 'h2,r1,23', 'r1,r1,10', 'r2,r2,0', 'r3,r1,16', 'r4,r1,21']
+---------
+['h1,r1,12', 'h2,r1,23', 'r1,r1,10', 'r2,r2,0', 'r3,r1,16', 'r4,r1,21']
+r2 completed iteration 8 at 2017-04-17 09:32:12.012901
+
+HOST r3
+Copied original routing table
+Starting r1
+TABLE: r4,r3,11;r1,r1,0;r2,r2,10;r3,r3,6;h2,r3,13;h1,h1,2
+Computed r1
+Starting r4
+TABLE: r4,r4,0;r1,r3,11;r2,r3,21;r3,r3,5;h2,h2,2;h1,r3,13
+Computed r4
+Computed Bellman-Ford
+Updated routing table
+---------
+['h1,r1,8', 'h2,r4,7', 'r1,r1,6', 'r2,r1,16', 'r3,r3,0', 'r4,r4,5']
+---------
+['h1,r1,8', 'h2,r4,7', 'r1,r1,6', 'r2,r1,16', 'r3,r3,0', 'r4,r4,5']
+r3 completed iteration 8 at 2017-04-17 09:32:12.013453
+
+HOST h2
+Copied original routing table
+Starting r4
+TABLE: r4,r4,0;r1,r3,11;r2,r3,21;r3,r3,5;h2,h2,2;h1,r3,13
+Computed r4
+Computed Bellman-Ford
+Updated routing table
+---------
+['h1,r4,15', 'h2,h2,0', 'r1,r4,13', 'r2,r4,23', 'r3,r4,7', 'r4,r4,2']
+---------
+['h1,r4,15', 'h2,h2,0', 'r1,r4,13', 'r2,r4,23', 'r3,r4,7', 'r4,r4,2']
+h2 completed iteration 8 at 2017-04-17 09:32:12.014148
+
+HOST r4
+Copied original routing table
+Starting r2
+TABLE: r4,r1,21;r1,r1,10;r2,r2,0;r3,r1,16;h2,r1,23;h1,r1,12
+Computed r2
+Starting r3
+TABLE: r4,r4,5;r1,r1,6;r2,r1,16;r3,r3,0;h2,r4,7;h1,r1,8
+Computed r3
+Starting h2
+TABLE: r4,r4,2;r1,r4,13;r2,r4,23;r3,r4,7;h2,h2,0;h1,r4,15
+Computed h2
+Computed Bellman-Ford
+Updated routing table
+---------
+['h1,r3,13', 'h2,h2,2', 'r1,r3,11', 'r2,r3,21', 'r3,r3,5', 'r4,r4,0']
+---------
+['h1,r3,13', 'h2,h2,2', 'r1,r3,11', 'r2,r3,21', 'r3,r3,5', 'r4,r4,0']
+r4 completed iteration 8 at 2017-04-17 09:32:12.015764
+
+HOST h2
+Copied original routing table
+Starting r4
+TABLE: r4,r4,0;r1,r3,11;r2,r3,21;r3,r3,5;h2,h2,2;h1,r3,13
+Computed r4
+Computed Bellman-Ford
+Updated routing table
+---------
+['h1,r4,15', 'h2,h2,0', 'r1,r4,13', 'r2,r4,23', 'r3,r4,7', 'r4,r4,2']
+---------
+['h1,r4,15', 'h2,h2,0', 'r1,r4,13', 'r2,r4,23', 'r3,r4,7', 'r4,r4,2']
+h2 completed iteration 9 at 2017-04-17 09:32:12.095260
+
+HOST r1
+Copied original routing table
+Starting h1
+TABLE: r4,r1,13;r1,r1,2;r2,r1,12;r3,r1,8;h2,r1,15;h1,h1,0
+Computed h1
+Starting r2
+TABLE: r4,r1,21;r1,r1,10;r2,r2,0;r3,r1,16;h2,r1,23;h1,r1,12
+Computed r2
+Starting r3
+TABLE: r4,r4,5;r1,r1,6;r2,r1,16;r3,r3,0;h2,r4,7;h1,r1,8
+Computed r3
+Computed Bellman-Ford
+Updated routing table
+---------
+['h1,h1,2', 'h2,r3,13', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6', 'r4,r3,11']
+---------
+['h1,h1,2', 'h2,r3,13', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6', 'r4,r3,11']
+r1 completed iteration 9 at 2017-04-17 09:32:12.187733
+
+HOST h1
+Copied original routing table
+Starting r1
+TABLE: r4,r3,11;r1,r1,0;r2,r2,10;r3,r3,6;h2,r3,13;h1,h1,2
+Computed r1
+Computed Bellman-Ford
+Updated routing table
+---------
+['h1,h1,0', 'h2,r1,15', 'r1,r1,2', 'r2,r1,12', 'r3,r1,8', 'r4,r1,13']
+---------
+['h1,h1,0', 'h2,r1,15', 'r1,r1,2', 'r2,r1,12', 'r3,r1,8', 'r4,r1,13']
+h1 completed iteration 9 at 2017-04-17 09:32:12.188154
+
+HOST r2
+Copied original routing table
+Starting r1
+TABLE: r4,r3,11;r1,r1,0;r2,r2,10;r3,r3,6;h2,r3,13;h1,h1,2
+Computed r1
+Starting r4
+TABLE: r4,r4,0;r1,r3,11;r2,r3,21;r3,r3,5;h2,h2,2;h1,r3,13
+Computed r4
+Computed Bellman-Ford
+Updated routing table
+---------
+['h1,r1,12', 'h2,r1,23', 'r1,r1,10', 'r2,r2,0', 'r3,r1,16', 'r4,r1,21']
+---------
+['h1,r1,12', 'h2,r1,23', 'r1,r1,10', 'r2,r2,0', 'r3,r1,16', 'r4,r1,21']
+r2 completed iteration 9 at 2017-04-17 09:32:12.189657
+
+HOST r3
+Copied original routing table
+Starting r1
+TABLE: r4,r3,11;r1,r1,0;r2,r2,10;r3,r3,6;h2,r3,13;h1,h1,2
+Computed r1
+Starting r4
+TABLE: r4,r4,0;r1,r3,11;r2,r3,21;r3,r3,5;h2,h2,2;h1,r3,13
+Computed r4
+Computed Bellman-Ford
+Updated routing table
+---------
+['h1,r1,8', 'h2,r4,7', 'r1,r1,6', 'r2,r1,16', 'r3,r3,0', 'r4,r4,5']
+---------
+['h1,r1,8', 'h2,r4,7', 'r1,r1,6', 'r2,r1,16', 'r3,r3,0', 'r4,r4,5']
+r3 completed iteration 9 at 2017-04-17 09:32:12.190170
+
+HOST r4
+Copied original routing table
+Starting r2
+TABLE: r4,r1,21;r1,r1,10;r2,r2,0;r3,r1,16;h2,r1,23;h1,r1,12
+Computed r2
+Starting r3
+TABLE: r4,r4,5;r1,r1,6;r2,r1,16;r3,r3,0;h2,r4,7;h1,r1,8
+Computed r3
+Starting h2
+TABLE: r4,r4,2;r1,r4,13;r2,r4,23;r3,r4,7;h2,h2,0;h1,r4,15
+Computed h2
+Computed Bellman-Ford
+Updated routing table
+---------
+['h1,r3,13', 'h2,h2,2', 'r1,r3,11', 'r2,r3,21', 'r3,r3,5', 'r4,r4,0']
+---------
+['h1,r3,13', 'h2,h2,2', 'r1,r3,11', 'r2,r3,21', 'r3,r3,5', 'r4,r4,0']
+r4 completed iteration 9 at 2017-04-17 09:32:12.193473
+
+HOST r4
+Copied original routing table
+Starting r2
+TABLE: r4,r1,21;r1,r1,10;r2,r2,0;r3,r1,16;h2,r1,23;h1,r1,12
+Computed r2
+Starting r3
+TABLE: r4,r4,5;r1,r1,6;r2,r1,16;r3,r3,0;h2,r4,7;h1,r1,8
+Computed r3
+Starting h2
+TABLE: r4,r4,2;r1,r4,13;r2,r4,23;r3,r4,7;h2,h2,0;h1,r4,15
+Computed h2
+Computed Bellman-Ford
+Updated routing table
+---------
+['h1,r3,13', 'h2,h2,2', 'r1,r3,11', 'r2,r3,21', 'r3,r3,5', 'r4,r4,0']
+---------
+['h1,r3,13', 'h2,h2,2', 'r1,r3,11', 'r2,r3,21', 'r3,r3,5', 'r4,r4,0']
+r4 completed iteration 10 at 2017-04-17 09:32:12.272261
+
+HOST h1
+Copied original routing table
+Starting r1
+TABLE: r4,r3,11;r1,r1,0;r2,r2,10;r3,r3,6;h2,r3,13;h1,h1,2
+Computed r1
+Computed Bellman-Ford
+Updated routing table
+---------
+['h1,h1,0', 'h2,r1,15', 'r1,r1,2', 'r2,r1,12', 'r3,r1,8', 'r4,r1,13']
+---------
+['h1,h1,0', 'h2,r1,15', 'r1,r1,2', 'r2,r1,12', 'r3,r1,8', 'r4,r1,13']
+h1 completed iteration 10 at 2017-04-17 09:32:12.360941
+
+HOST r1
+Copied original routing table
+Starting h1
+TABLE: r4,r1,13;r1,r1,2;r2,r1,12;r3,r1,8;h2,r1,15;h1,h1,0
+Computed h1
+Starting r2
+TABLE: r4,r1,21;r1,r1,10;r2,r2,0;r3,r1,16;h2,r1,23;h1,r1,12
+Computed r2
+Starting r3
+TABLE: r4,r4,5;r1,r1,6;r2,r1,16;r3,r3,0;h2,r4,7;h1,r1,8
+Computed r3
+Computed Bellman-Ford
+Updated routing table
+---------
+['h1,h1,2', 'h2,r3,13', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6', 'r4,r3,11']
+---------
+['h1,h1,2', 'h2,r3,13', 'r1,r1,0', 'r2,r2,10', 'r3,r3,6', 'r4,r3,11']
+r1 completed iteration 10 at 2017-04-17 09:32:12.368071
+
+HOST r2
+Copied original routing table
+Starting r1
+TABLE: r4,r3,11;r1,r1,0;r2,r2,10;r3,r3,6;h2,r3,13;h1,h1,2
+Computed r1
+Starting r4
+TABLE: r4,r4,0;r1,r3,11;r2,r3,21;r3,r3,5;h2,h2,2;h1,r3,13
+Computed r4
+Computed Bellman-Ford
+Updated routing table
+---------
+['h1,r1,12', 'h2,r1,23', 'r1,r1,10', 'r2,r2,0', 'r3,r1,16', 'r4,r1,21']
+---------
+['h1,r1,12', 'h2,r1,23', 'r1,r1,10', 'r2,r2,0', 'r3,r1,16', 'r4,r1,21']
+r2 completed iteration 10 at 2017-04-17 09:32:12.368591
+
+HOST r3
+Copied original routing table
+Starting r1
+TABLE: r4,r3,11;r1,r1,0;r2,r2,10;r3,r3,6;h2,r3,13;h1,h1,2
+Computed r1
+Starting r4
+TABLE: r4,r4,0;r1,r3,11;r2,r3,21;r3,r3,5;h2,h2,2;h1,r3,13
+Computed r4
+Computed Bellman-Ford
+Updated routing table
+---------
+['h1,r1,8', 'h2,r4,7', 'r1,r1,6', 'r2,r1,16', 'r3,r3,0', 'r4,r4,5']
+---------
+['h1,r1,8', 'h2,r4,7', 'r1,r1,6', 'r2,r1,16', 'r3,r3,0', 'r4,r4,5']
+r3 completed iteration 10 at 2017-04-17 09:32:12.369117
+
+HOST h2
+Copied original routing table
+Starting r4
+TABLE: r4,r4,0;r1,r3,11;r2,r3,21;r3,r3,5;h2,h2,2;h1,r3,13
+Computed r4
+Computed Bellman-Ford
+Updated routing table
+---------
+['h1,r4,15', 'h2,h2,0', 'r1,r4,13', 'r2,r4,23', 'r3,r4,7', 'r4,r4,2']
+---------
+['h1,r4,15', 'h2,h2,0', 'r1,r4,13', 'r2,r4,23', 'r3,r4,7', 'r4,r4,2']
+h2 completed iteration 10 at 2017-04-17 09:32:12.369562
+
+HOST h2
+Copied original routing table
+Starting r4
+TABLE: r4,r4,0;r1,r3,11;r2,r3,21;r3,r3,5;h2,h2,2;h1,r3,13
+Computed r4
+Computed Bellman-Ford
+Updated routing table
+---------
+['h1,r4,15', 'h2,h2,0', 'r1,r4,13', 'r2,r4,23', 'r3,r4,7', 'r4,r4,2']
+---------
+['h1,r4,15', 'h2,h2,0', 'r1,r4,13', 'r2,r4,23', 'r3,r4,7', 'r4,r4,2']
+h2 completed iteration 11 at 2017-04-17 09:32:12.446868
 
