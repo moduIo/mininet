@@ -157,20 +157,20 @@ while True:
 
     # If all of the neighbors have passed data
     if len(tables) == len(neighbors):
-        done = open('done.txt', 'a+')  # Text file of tally marks
-	done.write('x')
-        done.close()
+        ready = open('ready.txt', 'a+')  # Text file of tally marks
+	ready.write('x')
+        ready.close()
 
 	# Halt until all other servers are complete
-        done = open('done.txt', 'r')
-        completed = len(done.read())  # Number of hosts which are done
-        done.close()
+        ready = open('ready.txt', 'r')
+        completed = len(ready.read())  # Number of hosts which are done
+        ready.close()
 
         while completed < iteration * 6:
 	    time.sleep(.1)
-            done = open('done.txt', 'r')
-            completed = len(done.read())
-            done.close()
+            ready = open('ready.txt', 'r')
+            completed = len(ready.read())
+            ready.close()
 
 	# Compute new tables
 	log = open('log.txt', 'a+')
@@ -195,8 +195,9 @@ while True:
         else:
 	    log.write(host + ' completed iteration ' + str(iteration) + ' at ' + str(datetime.now()) + '\n===============\n\n')
             
-            # Delete contents of converged if even a single node updates
-            converged = open('converged.txt', 'w')
+            # Mark 'o' if an update occured
+            converged = open('converged.txt', 'a+')
+            converged.write('o')
             converged.close()
 
 	log.close()
@@ -221,8 +222,20 @@ while True:
         convergedNodes = len(converged.read())
         converged.close()
 
-	if convergedNodes >= 6:
-	    exit() 
+	# Halt until all nodes have marked the file
+	while convergedNodes < 6:
+	    time.sleep(.01)
+            converged = open('converged.txt', 'r')
+            convergedNodes = len(converged.read())
+            converged.close()
+
+        converged = open('converged.txt', 'r')
+        state = converged.read()
+        converged.close()
+
+        # If all nodes have converged exit
+	if state.count('x') == 6:
+	    exit()
 
 	# Create command for system
         command = 'python rip_lite_client.py'
@@ -235,3 +248,6 @@ while True:
 	
         # Run client code to send new tables
         os.system(command)
+
+        # If even a single node sends flush converged.txt
+        open('converged.txt', 'w').close()
