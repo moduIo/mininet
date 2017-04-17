@@ -16,7 +16,11 @@ for neighbor in neighbors:
     with open('routing_tables/' + socket.gethostname() + '/routing_table.txt', 'r') as f:
         routes = f.read().splitlines()
 
-    s.send('CLIENT SAYS ' + socket.gethostname() + ' routing table: ' + str(routes))
+    s.send('CLIENT ROUTING TABLE\n' + ' node-' + socket.gethostname() + ' : ' + str(routes))
+    
+    update = s.recv(1024)
 
-    print s.recv(1024)
+    if update:
+        print update
+    
     s.close

@@ -1,17 +1,12 @@
-py '\nR1 Client'
+px print 'r1\n'
 r1 python rip_lite_client.py '172.0.1.1, 172.0.2.2, 172.0.3.2'
-
-py '\nR2 Client'
+px print 'r2\n'
 r2 python rip_lite_client.py '172.0.2.1, 172.0.4.2'
-
-py '\nR3 Client'
+px print 'r3\n'
 r3 python rip_lite_client.py '172.0.3.1, 172.0.5.2'
-
-py '\nR4 Client'
+px print 'r4\n'
 r4 python rip_lite_client.py '172.0.4.1, 172.0.5.1, 172.0.6.2'
-
-py '\nH1 Client'
+px print 'h1\n'
 h1 python rip_lite_client.py '172.0.1.2'
-
-py '\nH2 Client'
+px print 'h2\n'
 h2 python rip_lite_client.py '172.0.6.1'
