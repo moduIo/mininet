@@ -53,8 +53,8 @@ def compute_tables(tables, routes, neighbors):
 	    field = entry.split(',')
 
             if not neighbor in costs:
-                continue
                 log.write('\n' + neighbor + ' is not in costs')
+                continue
             else:
 	        cost = costs[neighbor] + int(field[2])
 	        dest = field[0]
