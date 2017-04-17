@@ -52,6 +52,10 @@ def compute_tables(tables, routes, neighbors):
 	    cost = costs[neighbor] + int(field[2])
 	    dest = field[0]
 
+            # Ignore self paths
+            if dest == field[1]:
+	        continue
+
             # Cost >= 1000000 are dead links
 	    if cost < 1000000:
                 # If the dest was not already in the DV simply add it
