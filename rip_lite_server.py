@@ -12,15 +12,29 @@ import sys
 import os
 import re
 import time
+from datetime import datetime
 
+#
+# Implements Bellman-Ford algorithm
+#
+def compute_tables(tables, routes, neighbors):
+    for table in tables:
+        for neighbor in neighbors:
+            
+
+    return 'TABLES: ' + str(tables) + ' ROUTES ' + str(routes)
+
+#
+# Main()
+#
 iteration = 1      # Tracks iteration for message synchronization
-neighbors = []     # Holds neighbor names prepended with 'node-'
+neighbors = []     # Holds neighbor names prepended
 neighbor_ips = []  # Holds IP addresses of neighbors
 tables = {}        # Holds tables of neighbors
 
 # Create neighbor arrays from command line
 for neighbor in sys.argv[1].split(','):
-    neighbors.append('node-' + neighbor)
+    neighbors.append(neighbor)
 
 for ip in sys.argv[2].split(','):
     neighbor_ips.append(ip)
@@ -30,22 +44,32 @@ serverSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 serverSocket.bind(('', 800))
 host = socket.gethostname()
 
-# Enforce freash routing_table.txt
+# Enforce fresh routing_table.txt
 table_path = 'routing_tables/' + host + '/routing_table.txt'
 open(table_path, 'w').close()
 table = open(table_path, 'w')
 
-# Parse weights.txt file to get relevant weights
+# Parse weights.txt file to get initial routing tables
 with open('weights.txt', 'r') as f:
     for weight in f:
+	entry = weight.split(',')
+
         # Store edge weights of incident links
-        if host in weight:            
+        if host in entry:
+            cost = entry[2].strip()
+
+	    if host == entry[0]:
+	        dest = entry[1]
+	    else:
+		dest = entry[0]
+
             # Create application layer routing table file in CSV format
-            table.write(weight)
+            # Format: dest, cost, next
+            table.write(dest + ',' + dest + ',' + cost + '\n')
 
 table.close()
 
-# Get routing information stored in CSV on single line
+# Get routing information stored in CSV
 with open(table_path, 'r') as f:
     routes = f.read().splitlines()
 
@@ -55,7 +79,6 @@ serverSocket.listen(5)
 while True:
     (clientSocket, address) = serverSocket.accept()
     message = clientSocket.recv(1024)    
-    #clientSocket.send(message + '\n')  # Echo back client routing table
     
     # Check which neighbor sent the message
     for neighbor in neighbors:
@@ -71,7 +94,7 @@ while True:
 
 	# Halt until all other servers are complete
         done = open('done.txt', 'r')
-        completed = len(done.read())
+        completed = len(done.read())  # Number of hosts which are done
         done.close()
 
         while completed < iteration * 6:
@@ -82,11 +105,15 @@ while True:
             done.close()
 
 	# Compute new tables
-        #clientSocket.send('SERVER ROUTING TABLE ' + str(iteration) + '\n') 
-        #clientSocket.send(host + ' : ' + str(tables))
 	foo = open('foo.txt', 'a+')
-	foo.write(host + ' : ' + str(tables) + '\n')
+	foo.write(host + ' : ' + str(compute_tables(tables, routes, neighbors)) + '\n')
 	foo.close()
-        iteration += 1
+
+	# Write completion time to log.txt
+	log = open('log.txt', 'a+')
+	log.write(host + ' completed iteration ' + str(iteration) + ' at ' + str(datetime.now()) + '\n')
+	log.close()
+	
+        iteration += 1 # Track iteration for synchronization
     
     clientSocket.close()
