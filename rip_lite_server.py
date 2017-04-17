@@ -32,9 +32,15 @@ def compute_tables(tables, routes, neighbors):
         data = route.split(',')
 
         # If data is not null
-        if data and int(data[2]) < 1000000: 
-	    dests[data[0]] = data[1] + ',' + data[2]
-            costs[data[0]] = int(data[2])
+        if data:
+            if int(data[2]) < 1000000:
+	        dests[data[0]] = data[1] + ',' + data[2]
+                costs[data[0]] = int(data[2])
+            else:
+                costs[data[0]] = int(data[2])
+
+    log = open('log.txt', 'a+')
+    log.write('Copied original routing table')
 
     # For all neighbor distance vectors
     for neighbor in neighbors:
@@ -58,9 +64,16 @@ def compute_tables(tables, routes, neighbors):
                     dests[dest] = neighbor + ',' + str(cost)
                     costs[dest] = cost
 
+        log.write('\nComputed ' + neighbor)
+
+    log.write('\nComputed Bellman-Ford')
+
     # Fill in new DV
     for dest in dests:
         updatedRoutes.append(dest + ',' + dests[dest])
+
+    log.write('\nUpdated routing table')
+    log.close()
 
     return updatedRoutes
 
@@ -148,6 +161,10 @@ while True:
             done.close()
 
 	# Compute new tables
+	log = open('log.txt', 'a+')
+        log.write('HOST ' + host + '\n')
+        log.close()
+
         newRoutes = compute_tables(tables, routes, neighbors)
 	log = open('log.txt', 'a+')
         log.write('\n---------\n' + str(sorted(routes)) + '\n')
