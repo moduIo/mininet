@@ -1,4 +1,4 @@
-#
+#-----------------------------------------------------------------------------
 # Tim Zhang
 # CSE534 HW3: Part C
 # ---
@@ -6,7 +6,7 @@
 # each neighbor to pass in routing table information.
 # Once this data is received the server will update routing info and
 # pass to neighbors.
-#
+#-----------------------------------------------------------------------------
 import socket
 import sys
 import os
@@ -18,11 +18,39 @@ from datetime import datetime
 # Implements Bellman-Ford algorithm
 #
 def compute_tables(tables, routes, neighbors):
-    for table in tables:
-        for neighbor in neighbors:
-            
+    dests = {}          # (key, value) pairs (dest, {next, cost})
+    updatedRoutes = {}  # Holds updated routing table
+    costs = {}          # Holds current cost to node
+    host = socket.gethostname()
 
-    return 'TABLES: ' + str(tables) + ' ROUTES ' + str(routes)
+    # Set up host entry
+    dests[host] = host + ',0'
+    costs[host] = 0
+
+    # Split routes into dictionary keyed by dest
+    for route in routes:
+        data = route.split(',')
+	dests[data[0]] = data[1] + ',' + data[2]
+        costs[data[0]] = int(data[2])
+
+    # For all neighbor distance vectors
+    for neighbor in neighbors:
+        entries = tables[neighbor].split(';')
+	
+        # For each table entry
+	for entry in entries:
+	    field = entry.split(',')
+
+            # If the dest was not already in the DV simply add it
+            if not field[0] in dests:
+		cost = costs[neighbor] + int(field[2])
+                dests[field[0]] = neighbor + ',' + str(cost)
+
+    # Fill in new DV
+    for dest in dests.keys():
+        updatedRoutes[dest] = dests[dest]
+
+    return 'TABLES: ' + str(tables) + '\nROUTES' + str(routes) + '\nUPDATED ROUTES: ' + str(updatedRoutes) + '\n'
 
 #
 # Main()
@@ -84,7 +112,7 @@ while True:
     for neighbor in neighbors:
         if neighbor in message:
             # Add routing table to dict
-	    tables[neighbor] = re.findall(r'\[.*\]', message)[0]
+	    tables[neighbor] = message.split(':', 1)[-1]
 
     # If all of the neighbors have passed data
     if len(tables) == len(neighbors):

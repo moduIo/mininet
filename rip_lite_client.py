@@ -1,9 +1,9 @@
-#
+#-----------------------------------------------------------------------------
 # Tim Zhang
 # CSE534 HW3: Part C
 # ---
 # Program creates connections to each neighbor node and passes table data.
-#
+#-----------------------------------------------------------------------------
 import socket
 import sys
 
@@ -20,16 +20,10 @@ for neighbor in neighbors:
     s.connect((neighbor, 800)) # IP address is passed in to client
 
     # Formatted table information
-    s.send('CLIENT ROUTING TABLE\n' + socket.gethostname() + ' : ' + str(routes))
+    message = socket.gethostname() + ' :'
 
-    #-------------------------------------    
-    # MAYBE DELETE THIS
-    #
-    update = s.recv(1024)
+    for route in routes:
+        message += route + ';'
 
-    if update:
-        print update
-    #
-    #
-    #-------------------------------------
+    s.send(message[:-1])
     s.close
