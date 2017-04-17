@@ -1,96 +1,96 @@
-r4 completed iteration 1 at 2017-04-17 06:50:35.942349
+r4 completed iteration 1 at 2017-04-17 06:57:39.453248
 
-h1 completed iteration 1 at 2017-04-17 06:50:35.955044
+h1 completed iteration 1 at 2017-04-17 06:57:39.469717
 
-r3 completed iteration 1 at 2017-04-17 06:50:36.004276
+r3 completed iteration 1 at 2017-04-17 06:57:39.520510
 
-h2 completed iteration 1 at 2017-04-17 06:50:36.004746
+h2 completed iteration 1 at 2017-04-17 06:57:39.520938
 
-r2 completed iteration 1 at 2017-04-17 06:50:36.005099
+r2 completed iteration 1 at 2017-04-17 06:57:39.521402
 
-r1 completed iteration 1 at 2017-04-17 06:50:36.023978
+r1 completed iteration 1 at 2017-04-17 06:57:39.536602
 
-r1 completed iteration 2 at time 2017-04-17 06:50:36.068160 NO UPDATE
+r1 completed iteration 2 at time 2017-04-17 06:57:39.584656 NO UPDATE
 
-r4 completed iteration 2 at time 2017-04-17 06:50:36.155238 NO UPDATE
+r4 completed iteration 2 at time 2017-04-17 06:57:39.674160 NO UPDATE
 
-h2 completed iteration 2 at 2017-04-17 06:50:36.157059
+h2 completed iteration 2 at 2017-04-17 06:57:39.675499
 
-r2 completed iteration 2 at 2017-04-17 06:50:36.163168
+r3 completed iteration 2 at time 2017-04-17 06:57:39.677311 NO UPDATE
 
-r3 completed iteration 2 at time 2017-04-17 06:50:36.163555 NO UPDATE
+r3 completed iteration 3 at 2017-04-17 06:57:39.678273
 
-r3 completed iteration 3 at 2017-04-17 06:50:36.163928
+r2 completed iteration 2 at 2017-04-17 06:57:39.679055
 
-h1 completed iteration 2 at 2017-04-17 06:50:36.166616
+h1 completed iteration 2 at 2017-04-17 06:57:39.684020
 
-r1 completed iteration 3 at 2017-04-17 06:50:36.171231
+r1 completed iteration 3 at 2017-04-17 06:57:39.685010
 
-r2 completed iteration 3 at time 2017-04-17 06:50:36.233788 NO UPDATE
+r2 completed iteration 3 at time 2017-04-17 06:57:39.752921 NO UPDATE
 
-h1 completed iteration 3 at 2017-04-17 06:50:36.238950
+h1 completed iteration 3 at 2017-04-17 06:57:39.757452
 
-r1 completed iteration 4 at 2017-04-17 06:50:36.242166
+r1 completed iteration 4 at 2017-04-17 06:57:39.760357
 
-r4 completed iteration 3 at 2017-04-17 06:50:36.258249
+r4 completed iteration 3 at 2017-04-17 06:57:39.783243
 
-h1 completed iteration 4 at 2017-04-17 06:50:36.275299
+h1 completed iteration 4 at 2017-04-17 06:57:39.786474
 
-h2 completed iteration 3 at 2017-04-17 06:50:36.300868
+h2 completed iteration 3 at 2017-04-17 06:57:39.811769
 
-r4 completed iteration 4 at 2017-04-17 06:50:36.303839
+r4 completed iteration 4 at 2017-04-17 06:57:39.814172
 
-h2 completed iteration 4 at 2017-04-17 06:50:36.340295
+h2 completed iteration 4 at 2017-04-17 06:57:39.845741
 
-r2 completed iteration 4 at time 2017-04-17 06:50:36.340665 NO UPDATE
+r2 completed iteration 4 at time 2017-04-17 06:57:39.859614 NO UPDATE
 
-r2 completed iteration 5 at 2017-04-17 06:50:36.340942
+r2 completed iteration 5 at 2017-04-17 06:57:39.859937
 
-r3 completed iteration 4 at 2017-04-17 06:50:36.341367
+r3 completed iteration 4 at 2017-04-17 06:57:39.860366
 
-r4 completed iteration 5 at time 2017-04-17 06:50:36.344335 NO UPDATE
+r1 completed iteration 5 at time 2017-04-17 06:57:39.890153 NO UPDATE
 
-r1 completed iteration 5 at time 2017-04-17 06:50:36.383685 NO UPDATE
+r3 completed iteration 5 at time 2017-04-17 06:57:39.894068 NO UPDATE
 
-r1 completed iteration 6 at time 2017-04-17 06:50:36.383950 NO UPDATE
+r3 completed iteration 6 at time 2017-04-17 06:57:39.894296 NO UPDATE
 
-r2 completed iteration 6 at time 2017-04-17 06:50:36.390051 NO UPDATE
+r4 completed iteration 5 at time 2017-04-17 06:57:39.946147 NO UPDATE
 
-r3 completed iteration 5 at time 2017-04-17 06:50:36.394848 NO UPDATE
+r4 completed iteration 6 at 2017-04-17 06:57:39.946659
 
-r3 completed iteration 6 at time 2017-04-17 06:50:36.395027 NO UPDATE
+h2 completed iteration 5 at 2017-04-17 06:57:39.962117
 
-r3 completed iteration 7 at time 2017-04-17 06:50:36.395182 NO UPDATE
+r4 completed iteration 7 at time 2017-04-17 06:57:39.964286 NO UPDATE
 
-r4 completed iteration 6 at 2017-04-17 06:50:36.446206
+r1 completed iteration 6 at time 2017-04-17 06:57:39.991659 NO UPDATE
 
-r3 completed iteration 8 at time 2017-04-17 06:50:36.471861 NO UPDATE
+r1 completed iteration 7 at time 2017-04-17 06:57:39.991999 NO UPDATE
 
-h2 completed iteration 5 at 2017-04-17 06:50:36.472842
+r1 completed iteration 8 at time 2017-04-17 06:57:39.992174 NO UPDATE
 
-r4 completed iteration 7 at time 2017-04-17 06:50:36.475516 NO UPDATE
+r2 completed iteration 6 at time 2017-04-17 06:57:39.993386 NO UPDATE
 
-r4 completed iteration 8 at time 2017-04-17 06:50:36.475746 NO UPDATE
+r2 completed iteration 7 at time 2017-04-17 06:57:39.993640 NO UPDATE
 
-r4 completed iteration 9 at time 2017-04-17 06:50:36.476171 NO UPDATE
+r2 completed iteration 8 at time 2017-04-17 06:57:39.993805 NO UPDATE
 
-r1 completed iteration 7 at time 2017-04-17 06:50:36.486351 NO UPDATE
+r3 completed iteration 7 at time 2017-04-17 06:57:39.995052 NO UPDATE
 
-r1 completed iteration 8 at time 2017-04-17 06:50:36.486859 NO UPDATE
+r3 completed iteration 8 at time 2017-04-17 06:57:39.995311 NO UPDATE
 
-r1 completed iteration 9 at time 2017-04-17 06:50:36.487168 NO UPDATE
+r4 completed iteration 8 at time 2017-04-17 06:57:40.065318 NO UPDATE
 
-r1 completed iteration 10 at time 2017-04-17 06:50:36.487577 NO UPDATE
+r4 completed iteration 9 at time 2017-04-17 06:57:40.065697 NO UPDATE
 
-r2 completed iteration 7 at time 2017-04-17 06:50:36.494760 NO UPDATE
+r4 completed iteration 10 at time 2017-04-17 06:57:40.065960 NO UPDATE
 
-r2 completed iteration 8 at time 2017-04-17 06:50:36.495077 NO UPDATE
+r4 completed iteration 11 at time 2017-04-17 06:57:40.066401 NO UPDATE
 
-r4 completed iteration 10 at time 2017-04-17 06:50:36.577223 NO UPDATE
+r1 completed iteration 9 at time 2017-04-17 06:57:40.093346 NO UPDATE
 
-r4 completed iteration 11 at time 2017-04-17 06:50:36.577516 NO UPDATE
+r1 completed iteration 10 at time 2017-04-17 06:57:40.093637 NO UPDATE
 
-r4 completed iteration 12 at time 2017-04-17 06:50:36.577716 NO UPDATE
+r1 completed iteration 11 at time 2017-04-17 06:57:40.093841 NO UPDATE
 
-r1 completed iteration 11 at time 2017-04-17 06:50:36.588763 NO UPDATE
+r4 completed iteration 12 at time 2017-04-17 06:57:40.167751 NO UPDATE
 
