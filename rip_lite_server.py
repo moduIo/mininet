@@ -32,7 +32,7 @@ def compute_tables(tables, routes, neighbors):
         data = route.split(',')
 
         # If data is not null
-        if data: 
+        if data and int(data[2]) < 1000000: 
 	    dests[data[0]] = data[1] + ',' + data[2]
             costs[data[0]] = int(data[2])
 
