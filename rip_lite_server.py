@@ -47,6 +47,7 @@ def compute_tables(tables, routes, neighbors, iteration):
         entries = tables[neighbor].split(';')
 
         log.write('\nStarting ' + neighbor)
+        log.write('\nTABLE: ' + str(tables[neighbor]))
 	
         # For each table entry
 	for entry in entries:
