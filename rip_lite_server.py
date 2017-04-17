@@ -182,52 +182,39 @@ while True:
         log.write('\n---------\n' + str(sorted(routes)) + '\n')
         log.write('---------\n' + str(sorted(newRoutes)) + '\n')
 
-	# Only pass DV on update
-        if False:
-            print 'fpp'
-        #if sorted(routes) == sorted(newRoutes):
-            # Write to done for synchronization
-            #done = open('done.txt', 'a+')
-            #done.write('o')
-            #done.close()
-
-	    # Write to log
-            #log = open('log.txt', 'a+')
-            #log.write(host + ' completed iteration ' + str(iteration) + ' at time ' + str(datetime.now()) + ' NO UPDATE\n\n')
-            #log.close()
-            
-            # Cleanup for next iteration
-            #tables = {}
-	    #iteration += 1
-
+	# Write completion time to log.txt
+	log = open('log.txt', 'a+')
+        
+        if route == newRoutes:
+	    log.write(host + ' completed iteration ' + str(iteration) + ' at ' + str(datetime.now()) + 'NO UPDATE\n\n')
         else:
-	    routes = newRoutes
-
-            # Write new table to file
-            table = open(table_path, 'w')
-
-            for route in routes:
-                table.write(route + '\n')
-            
-            table.close()
-
-	    # Write completion time to log.txt
-	    log = open('log.txt', 'a+')
 	    log.write(host + ' completed iteration ' + str(iteration) + ' at ' + str(datetime.now()) + '\n\n')
-	    log.close()
-	    
-            # Cleanup for next iteration
-            tables = {}
-            iteration += 1 # Track iteration for synchronization
 
-	    # Create command for system
-            command = 'python rip_lite_client.py'
-            ips = ''
+	log.close()
 
-            for ip in neighbor_ips:
-	        ips += ip + ','
+        # Update routes
+        routes = newRoutes
+
+        # Write new table to file
+        table = open(table_path, 'w')
+
+        for route in routes:
+            table.write(route + '\n')
+            
+        table.close()
 	    
-            command += ' \"' + ips[:-1] + '\"'
+        # Cleanup for next iteration
+        tables = {}
+        iteration += 1 # Track iteration for synchronization
+
+	# Create command for system
+        command = 'python rip_lite_client.py'
+        ips = ''
+
+        for ip in neighbor_ips:
+	    ips += ip + ','
+	    
+        command += ' \"' + ips[:-1] + '\"'
 	
-            # Run client code to send new tables
-            os.system(command)
+        # Run client code to send new tables
+        os.system(command)
