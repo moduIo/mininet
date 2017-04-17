@@ -186,8 +186,18 @@ while True:
 	# Write completion time to log.txt        
         if sorted(routes) == sorted(newRoutes):
 	    log.write(host + ' completed iteration ' + str(iteration) + ' at ' + str(datetime.now()) + ' --NO UPDATE\n===============\n\n')
+            
+            # Track if system has converged
+            converged = open('converged.txt', 'a+')
+            converged.write('x')
+            converged.close()
+
         else:
 	    log.write(host + ' completed iteration ' + str(iteration) + ' at ' + str(datetime.now()) + '\n===============\n\n')
+            
+            # Delete contents of converged if even a single node updates
+            converged = open('converged.txt', 'w')
+            converged.close()
 
 	log.close()
 
@@ -205,6 +215,14 @@ while True:
         # Cleanup for next iteration
         tables = {}
         iteration += 1 # Track iteration for synchronization
+
+        # Terminate server if all processes have converged
+        converged = open('converged.txt', 'r')
+        convergedNodes = len(converged.read())
+        converged.close()
+
+	if convergedNodes >= 6:
+	    exit() 
 
 	# Create command for system
         command = 'python rip_lite_client.py'
