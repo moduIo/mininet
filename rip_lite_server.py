@@ -116,13 +116,18 @@ table = open(table_path, 'a+')
 
 # Parse weights.txt file to get initial routing tables
 with open('weights.txt', 'r') as f:
+    prev_table = table.read().split('\n')
+
+    if len(prev_table) > 0:
+	prev_table = prev_table[:-1]  # Update via old tables
+	
     for weight in f:
 	entry = weight.split(',')
 
         # Store edge weights of incident links
         if host in entry:
-            cost = entry[2].strip()
-            
+            cost = entry[2].strip()		            
+
             # Handle negative weight by poisoned reverse
             if int(cost) < 0:
                 cost = str(1000000)
@@ -132,11 +137,45 @@ with open('weights.txt', 'r') as f:
 	    else:
 		dest = entry[0]
 
-            # Create application layer routing table file in CSV format
-            # Format: dest, cost, next
-            table.write(dest + ',' + dest + ',' + cost + '\n')
+            # Update via previous table
+	    if len(prev_table) > 0:
+		for prev_entry in prev_table:
+		    prev_fields = prev_entry.split(',')
+
+		    if prev_fields[0] == dest:
+			# If the weight changed
+			if int(prev_fields[2]) != cost:
+			    diff = int(prev_fields[2]) - int(cost)
+
+			    # Update the cost
+			    prev_fields[2] = cost
+
+			    # Update each path which uses the changed node
+			    for prev_path in prev_table:
+				path_fields = prev_path.split(',')
+				
+				if path_fields[1] == dest:
+				    path_fields[2] = str(int(path_fields[2]) - diff)
+				    prev_path = ','.join(path_fields)	
+		
+			    prev_entry = ','.join(prev_fields)		            
+
+	    # Otherwise it is the first time running servers
+	    else:
+                # Create application layer routing table file in CSV format
+                # Format: dest, cost, next
+                table.write(dest + ',' + dest + ',' + cost + '\n')
 
 table.close()
+
+# If there was a previous run of B-F
+if len(prev_table) > 0:
+    table = open(table_path, 'w+')
+
+    for row in prev_table:
+	table.write(row + '\n')
+
+    table.close()
 
 # Get routing information stored in CSV
 with open(table_path, 'r') as f:
