@@ -33,6 +33,7 @@ def compute_tables(tables, routes, neighbors, iteration):
 
         # If data is not null
         if data:
+            # Cost >= 1000000 are dead links
             if int(data[2]) < 1000000:
 	        dests[data[0]] = data[1] + ',' + data[2]
                 costs[data[0]] = int(data[2])
@@ -111,7 +112,7 @@ host = socket.gethostname()
 
 # Populate routing_table.txt
 table_path = 'routing_tables/' + host + '/routing_table.txt'
-table = open(table_path, 'w+')
+table = open(table_path, 'a+')
 
 # Parse weights.txt file to get initial routing tables
 with open('weights.txt', 'r') as f:
