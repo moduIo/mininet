@@ -117,6 +117,7 @@ table = open(table_path, 'a+')
 # Parse weights.txt file to get initial routing tables
 with open('weights.txt', 'r') as f:
     prev_table = table.read().split('\n')
+    new_table = []
 
     if len(prev_table) > 0:
 	prev_table = prev_table[:-1]  # Update via old tables
@@ -144,7 +145,7 @@ with open('weights.txt', 'r') as f:
 
 		    if prev_fields[0] == dest:
 			# If the weight changed
-			if int(prev_fields[2]) != cost:
+			if prev_fields[2] != cost and int(cost) < 1000000:
 			    diff = int(prev_fields[2]) - int(cost)
 
 			    # Update the cost
@@ -158,7 +159,10 @@ with open('weights.txt', 'r') as f:
 				    path_fields[2] = str(int(path_fields[2]) - diff)
 				    prev_path = ','.join(path_fields)	
 		
-			    prev_entry = ','.join(prev_fields)		            
+			    prev_entry = ','.join(prev_fields)
+			    new_table.append(prev_entry)
+                    else:
+                        new_table.append(prev_entry)
 
 	    # Otherwise it is the first time running servers
 	    else:
@@ -170,9 +174,13 @@ table.close()
 
 # If there was a previous run of B-F
 if len(prev_table) > 0:
+    foo = open('foo.txt', 'a+')
+    foo.write('\n' + host + '\n')
+    foo.write(str(new_table))
+
     table = open(table_path, 'w+')
 
-    for row in prev_table:
+    for row in new_table:
 	table.write(row + '\n')
 
     table.close()
